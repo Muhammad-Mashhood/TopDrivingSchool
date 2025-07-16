@@ -217,18 +217,18 @@ const ContactSection = () => (
             <CardDescription>Fill out the form and we'll get back to you as soon as possible.</CardDescription>
           </CardHeader>
           <CardContent>
-            <form className="space-y-4" suppressHydrationWarning>
+            <form className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" placeholder="Your Name" />
+                <Input id="name" placeholder="Your Name" suppressHydrationWarning />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="your@email.com" />
+                <Input id="email" type="email" placeholder="your@email.com" suppressHydrationWarning />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Your questions or comments..." />
+                <Textarea id="message" placeholder="Your questions or comments..." suppressHydrationWarning />
               </div>
               <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">Send Message</Button>
             </form>
