@@ -26,23 +26,23 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 const navLinks = [
     { href: "#courses", label: "Courses" },
     { href: "#testimonials", label: "Testimonials" },
-    { href: "#ai-tips", label: "AI Tips" },
+    { href: "#ai-tips", label: "Tips" },
     { href: "#contact", label: "Contact" },
 ];
 
 const Header = () => (
   <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
     <div className="container flex h-16 max-w-screen-2xl items-center">
-      <Link href="#" className="mr-6 flex items-center space-x-2">
+      <Link href="#" className="mr-auto flex items-center space-x-2">
         <ShieldCheck className="h-8 w-8 text-primary" />
-        <span className="hidden font-bold sm:inline-block text-xl">TopDrivingSchool</span>
+        <span className="font-bold sm:inline-block text-xl">TopDrivingSchool</span>
       </Link>
-      <nav className="hidden flex-1 items-center justify-center gap-6 text-sm font-medium md:flex">
+      <nav className="hidden items-center justify-center gap-6 text-sm font-medium md:flex">
          {navLinks.map(link => (
             <Link key={link.href} href={link.href} className="text-foreground/60 transition-colors hover:text-foreground/80">{link.label}</Link>
         ))}
       </nav>
-      <div className="flex flex-1 items-center justify-end space-x-2">
+      <div className="flex flex-1 items-center justify-end space-x-2 md:ml-auto md:flex-none">
         <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex">
           <a href="tel:01611234567">
             <Phone className="mr-2 h-4 w-4" />
