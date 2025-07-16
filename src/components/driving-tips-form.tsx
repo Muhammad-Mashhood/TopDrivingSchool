@@ -1,6 +1,7 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { getDrivingTips, type DrivingTipsState } from '@/app/actions';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -26,7 +27,7 @@ function SubmitButton() {
 }
 
 export function DrivingTipsForm() {
-  const [state, formAction] = useFormState(getDrivingTips, initialState);
+  const [state, formAction] = useActionState(getDrivingTips, initialState);
 
   return (
     <div className="grid gap-8 md:grid-cols-2 items-start">
