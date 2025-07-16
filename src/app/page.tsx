@@ -81,7 +81,7 @@ const HeroSection = () => (
       <p className="text-lg text-muted-foreground">
         TopDrivingSchool offers comprehensive, AI-enhanced driving lessons to get you on the road safely and quickly.
       </p>
-      <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+      <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
         <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto">
           <Link href="#courses">
             Our Courses <ChevronRight className="ml-2 h-5 w-5" />
@@ -302,7 +302,7 @@ const Footer = () => (
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-background px-4 sm:px-6 lg:px-8">
       <Header />
       <main className="flex-1">
         <HeroSection />
@@ -315,5 +315,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
