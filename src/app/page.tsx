@@ -11,6 +11,7 @@ import {
   Sparkles,
   ChevronRight,
   Route,
+  Menu,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -20,6 +21,14 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { DrivingTipsForm } from '@/components/driving-tips-form';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+
+const navLinks = [
+    { href: "#courses", label: "Courses" },
+    { href: "#testimonials", label: "Testimonials" },
+    { href: "#ai-tips", label: "AI Tips" },
+    { href: "#contact", label: "Contact" },
+];
 
 const Header = () => (
   <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -29,13 +38,12 @@ const Header = () => (
         <span className="hidden font-bold sm:inline-block text-xl">TopDrivingSchool</span>
       </Link>
       <nav className="hidden flex-1 items-center justify-center gap-6 text-sm font-medium md:flex">
-        <Link href="#courses" className="text-foreground/60 transition-colors hover:text-foreground/80">Courses</Link>
-        <Link href="#testimonials" className="text-foreground/60 transition-colors hover:text-foreground/80">Testimonials</Link>
-        <Link href="#ai-tips" className="text-foreground/60 transition-colors hover:text-foreground/80">AI Tips</Link>
-        <Link href="#contact" className="text-foreground/60 transition-colors hover:text-foreground/80">Contact</Link>
+         {navLinks.map(link => (
+            <Link key={link.href} href={link.href} className="text-foreground/60 transition-colors hover:text-foreground/80">{link.label}</Link>
+        ))}
       </nav>
       <div className="flex flex-1 items-center justify-end space-x-2">
-        <Button variant="outline" size="sm" asChild>
+        <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex">
           <a href="tel:01611234567">
             <Phone className="mr-2 h-4 w-4" />
             Call Now
@@ -44,6 +52,21 @@ const Header = () => (
         <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
           <Link href="#contact">Book Now</Link>
         </Button>
+        <Sheet>
+            <SheetTrigger asChild>
+                <Button variant="outline" size="icon" className="md:hidden">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Open navigation menu</span>
+                </Button>
+            </SheetTrigger>
+            <SheetContent side="right">
+                <div className="flex flex-col gap-y-4 pt-6">
+                    {navLinks.map(link => (
+                        <Link key={link.href} href={link.href} className="text-lg font-medium text-foreground/80 transition-colors hover:text-foreground">{link.label}</Link>
+                    ))}
+                </div>
+            </SheetContent>
+        </Sheet>
       </div>
     </div>
   </header>
@@ -51,20 +74,20 @@ const Header = () => (
 
 const HeroSection = () => (
   <section className="container grid lg:grid-cols-2 gap-12 items-center py-20 md:py-32">
-    <div className="space-y-6">
+    <div className="space-y-6 text-center lg:text-left">
       <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
         Learn to Drive with Confidence in Manchester
       </h1>
       <p className="text-lg text-muted-foreground">
         TopDrivingSchool offers comprehensive, AI-enhanced driving lessons to get you on the road safely and quickly.
       </p>
-      <div className="flex space-x-4">
-        <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+      <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+        <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto">
           <Link href="#courses">
             Our Courses <ChevronRight className="ml-2 h-5 w-5" />
           </Link>
         </Button>
-        <Button asChild size="lg" variant="outline">
+        <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
           <Link href="#contact">Request Info</Link>
         </Button>
       </div>
@@ -217,7 +240,7 @@ const ContactSection = () => (
             <CardDescription>Fill out the form and we'll get back to you as soon as possible.</CardDescription>
           </CardHeader>
           <CardContent>
-            <form className="space-y-4">
+            <form className="space-y-4" suppressHydrationWarning>
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
                 <Input id="name" placeholder="Your Name" suppressHydrationWarning />
@@ -292,3 +315,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
