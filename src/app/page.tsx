@@ -29,11 +29,41 @@ const navLinks = [
     { href: "#contact", label: "Contact" },
 ];
 
+const Logo = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      className="h-12 w-12 text-primary fill-current"
+    >
+      <g>
+        {/* Shield */}
+        <path d="M50 15 C 40 20, 20 25, 20 50 C 20 75, 40 80, 50 85 C 60 80, 80 75, 80 50 C 80 25, 60 20, 50 15 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
+        
+        {/* Crown */}
+        <path d="M40 18 Q 50 10, 60 18 L 55 25 L 50 20 L 45 25 Z" />
+        
+        {/* T */}
+        <path d="M40 35 L 60 35 M 50 35 L 50 65 Q 45 70, 40 65" fill="none" stroke="currentColor" strokeWidth="4" />
+
+        {/* Left Flourish */}
+        <path d="M20 50 C 25 40, 30 30, 40 25" fill="none" stroke="currentColor" strokeWidth="2"/>
+        <path d="M20 50 C 15 60, 25 75, 35 80" fill="none" stroke="currentColor" strokeWidth="2"/>
+        <path d="M30 40 C 20 45, 15 55, 20 65" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+
+
+        {/* Right Flourish */}
+        <path d="M80 50 C 75 40, 70 30, 60 25" fill="none" stroke="currentColor" strokeWidth="2"/>
+        <path d="M80 50 C 85 60, 75 75, 65 80" fill="none" stroke="currentColor" strokeWidth="2"/>
+        <path d="M70 40 C 80 45, 85 55, 80 65" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+      </g>
+    </svg>
+)
+
 const Header = () => (
   <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
     <div className="container flex h-16 max-w-screen-2xl items-center px-4 md:px-6">
       <Link href="#" className="mr-auto flex items-center space-x-2">
-        <Shield className="h-8 w-8 text-primary fill-current" />
+        <Logo />
         <span className="font-bold sm:inline-block text-xl">Top Driving School</span>
       </Link>
       <nav className="hidden items-center justify-center gap-2 text-sm font-medium md:flex">
@@ -317,4 +347,3 @@ export default function Home() {
     </div>
   );
 }
-
