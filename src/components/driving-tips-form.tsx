@@ -30,32 +30,34 @@ export function DrivingTipsForm() {
   const [state, formAction] = useActionState(getDrivingTips, initialState);
 
   return (
-    <div className="grid gap-8 md:grid-cols-2 items-start">
-      <Card className="shadow-lg bg-card">
+    <div className="grid gap-8 md:grid-cols-2 items-stretch">
+      <Card className="shadow-lg bg-card flex flex-col">
         <CardHeader>
           <CardTitle>Driving Conditions Input</CardTitle>
           <CardDescription>Enter current Altrincham driving conditions to get tailored tips.</CardDescription>
         </CardHeader>
-        <CardContent>
-          <form action={formAction} className="space-y-4">
-            <div>
-              <Label htmlFor="weatherConditions">Weather Conditions</Label>
-              <Input id="weatherConditions" name="weatherConditions" placeholder="e.g., Heavy rain, foggy" suppressHydrationWarning />
-              {state.errors?.weatherConditions && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.weatherConditions[0]}</p>}
-            </div>
-            <div>
-              <Label htmlFor="majorStreets">Major Streets / Intersections</Label>
-              <Input id="majorStreets" name="majorStreets" placeholder="e.g., A56, Dunham Road" suppressHydrationWarning />
-               {state.errors?.majorStreets && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.majorStreets[0]}</p>}
-            </div>
-            <div>
-              <Label htmlFor="constructionUpdates">Construction Updates</Label>
-              <Input id="constructionUpdates" name="constructionUpdates" placeholder="e.g., Road closure on George Street" suppressHydrationWarning />
-               {state.errors?.constructionUpdates && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.constructionUpdates[0]}</p>}
-            </div>
-            <div>
-              <Label htmlFor="configuredTips">Admin Configured Tips (Optional)</Label>
-              <Textarea id="configuredTips" name="configuredTips" placeholder="Enter any pre-configured tips here..." suppressHydrationWarning />
+        <CardContent className="flex-grow flex flex-col">
+          <form action={formAction} className="space-y-4 flex flex-col flex-grow">
+            <div className="flex-grow space-y-4">
+              <div>
+                <Label htmlFor="weatherConditions">Weather Conditions</Label>
+                <Input id="weatherConditions" name="weatherConditions" placeholder="e.g., Heavy rain, foggy" suppressHydrationWarning />
+                {state.errors?.weatherConditions && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.weatherConditions[0]}</p>}
+              </div>
+              <div>
+                <Label htmlFor="majorStreets">Major Streets / Intersections</Label>
+                <Input id="majorStreets" name="majorStreets" placeholder="e.g., A56, Dunham Road" suppressHydrationWarning />
+                 {state.errors?.majorStreets && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.majorStreets[0]}</p>}
+              </div>
+              <div>
+                <Label htmlFor="constructionUpdates">Construction Updates</Label>
+                <Input id="constructionUpdates" name="constructionUpdates" placeholder="e.g., Road closure on George Street" suppressHydrationWarning />
+                 {state.errors?.constructionUpdates && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.constructionUpdates[0]}</p>}
+              </div>
+              <div>
+                <Label htmlFor="configuredTips">Admin Configured Tips (Optional)</Label>
+                <Textarea id="configuredTips" name="configuredTips" placeholder="Enter any pre-configured tips here..." suppressHydrationWarning />
+              </div>
             </div>
             <SubmitButton />
              {state.message && state.message !== 'success' && (
@@ -68,7 +70,7 @@ export function DrivingTipsForm() {
         </CardContent>
       </Card>
 
-      <Card className="flex flex-col shadow-lg min-h-[580px] bg-card">
+      <Card className="flex flex-col shadow-lg bg-card">
         <CardHeader>
           <CardTitle>Your AI-Powered Driving Tips</CardTitle>
           <CardDescription>Here are your personalized tips for driving safely in Altrincham today.</CardDescription>
