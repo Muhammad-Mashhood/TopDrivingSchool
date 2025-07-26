@@ -31,12 +31,12 @@ const navLinks = [
 
 const Header = () => (
   <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-    <div className="container flex h-16 max-w-screen-2xl items-center">
+    <div className="container flex h-16 max-w-screen-2xl items-center px-4 md:px-6">
       <Link href="#" className="mr-auto flex items-center space-x-2">
         <ShieldCheck className="h-8 w-8 text-primary" />
         <span className="font-bold sm:inline-block text-xl">Top Driving</span>
       </Link>
-      <nav className="hidden items-center justify-center gap-4 text-sm font-medium md:flex">
+      <nav className="hidden items-center justify-center gap-2 text-sm font-medium md:flex">
          {navLinks.map(link => (
             <Link key={link.href} href={link.href} className="px-4 text-foreground/60 transition-colors hover:text-foreground/80">{link.label}</Link>
         ))}
@@ -72,7 +72,7 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-  <section className="container grid lg:grid-cols-2 gap-12 items-center py-20 md:py-32">
+  <section className="container grid lg:grid-cols-2 gap-12 items-center py-20 md:py-32 px-4 md:px-6">
     <div className="space-y-6 text-center lg:text-left">
       <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
         Friendly Automatic Driving Lessons in Altrincham
@@ -106,43 +106,43 @@ const HeroSection = () => (
 
 const OfferAndTestimonialsSection = () => (
     <section id="offer" className="w-full py-20 md:py-28 bg-card">
-        <div className="container max-w-screen-xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-                <div>
-                    <div className="space-y-4 mb-12 text-center lg:text-left">
+        <div className="container max-w-screen-lg mx-auto px-4 md:px-6">
+            <div className="flex flex-col items-center gap-16">
+                <div className="flex flex-col items-center text-center">
+                    <div className="space-y-4 mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold">Our Special Offer</h2>
-                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0">We keep it simple with one great plan for learning to drive.</p>
+                        <p className="text-lg text-muted-foreground max-w-2xl">We keep it simple with one great plan for learning to drive.</p>
                     </div>
-                    <Card className="w-full max-w-md text-left shadow-lg hover:shadow-xl transition-shadow duration-300 mx-auto lg:mx-0">
-                        <CardHeader className="items-center lg:items-start text-center lg:text-left">
-                            <div className="bg-secondary p-4 rounded-full mb-4">
+                    <Card className="w-full max-w-md text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <CardHeader>
+                            <div className="bg-secondary p-4 rounded-full mb-4 inline-block">
                                 <Car className="h-8 w-8 text-primary" />
                             </div>
                             <CardTitle>Automatic Driving Lessons</CardTitle>
                         </CardHeader>
-                        <CardContent className="flex-grow text-center lg:text-left">
+                        <CardContent>
                             <p className="text-muted-foreground">Professional and friendly lessons in an automatic car. Perfect for learners of all levels in Altrincham.</p>
                         </CardContent>
                         <div className="p-6 pt-0">
-                            <p className="text-4xl font-bold text-primary text-center">£30<span className="text-lg font-medium text-muted-foreground">/hour</span></p>
+                            <p className="text-4xl font-bold text-primary">£30<span className="text-lg font-medium text-muted-foreground">/hour</span></p>
                             <Button className="mt-4 w-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
-                            <Link href="#contact">Book Your Lesson</Link>
+                                <Link href="#contact">Book Your Lesson</Link>
                             </Button>
                         </div>
                     </Card>
                 </div>
-                <div id="testimonials">
-                    <div className="space-y-4 mb-12 text-center lg:text-left">
+                <div id="testimonials" className="w-full">
+                    <div className="space-y-4 mb-12 text-center">
                         <h2 className="text-3xl md:text-4xl font-bold">What Our Students Say</h2>
                         <p className="text-lg text-muted-foreground">We're proud to have helped so many people become confident drivers.</p>
                     </div>
-                    <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-xl mx-auto lg:mx-0">
+                    <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-xl mx-auto">
                         <CarouselContent>
                             {testimonials.map((testimonial, index) => (
                                 <CarouselItem key={index}>
                                     <div className="p-1 h-full">
                                         <Card className="flex flex-col justify-between h-full p-6 shadow-md">
-                                            <CardContent className="p-0">
+                                            <CardContent className="p-0 text-left">
                                                 <div className="flex mb-4">
                                                     {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}
                                                 </div>
@@ -162,7 +162,6 @@ const OfferAndTestimonialsSection = () => (
         </div>
     </section>
 );
-
 
 const testimonials = [
   {
@@ -186,7 +185,7 @@ const testimonials = [
 
 const AiTipsSection = () => (
   <section id="ai-tips" className="py-20 md:py-28 bg-background">
-    <div className="container">
+    <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center">
           <Sparkles className="h-8 w-8 mr-4 text-accent" />
@@ -203,7 +202,7 @@ const AiTipsSection = () => (
 
 const ContactSection = () => (
   <section id="contact" className="py-20 md:py-28">
-    <div className="container">
+    <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold">Get In Touch</h2>
         <p className="text-lg text-muted-foreground">Have questions? Want to book a lesson? Reach out to us!</p>
@@ -268,7 +267,7 @@ const ContactSection = () => (
 
 const Footer = () => (
   <footer className="bg-card border-t">
-    <div className="container py-6 text-center text-muted-foreground">
+    <div className="container py-6 text-center text-muted-foreground px-4 md:px-6">
       <p>&copy; {new Date().getFullYear()} Top Driving. All rights reserved.</p>
     </div>
   </footer>
