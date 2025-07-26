@@ -37,25 +37,25 @@ export function DrivingTipsForm() {
           <CardDescription>Enter current Altrincham driving conditions to get tailored tips.</CardDescription>
         </CardHeader>
         <CardContent>
-          <form action={formAction} className="space-y-4" suppressHydrationWarning>
+          <form action={formAction} className="space-y-4">
             <div>
               <Label htmlFor="weatherConditions">Weather Conditions</Label>
-              <Input id="weatherConditions" name="weatherConditions" placeholder="e.g., Heavy rain, foggy" />
+              <Input id="weatherConditions" name="weatherConditions" placeholder="e.g., Heavy rain, foggy" suppressHydrationWarning />
               {state.errors?.weatherConditions && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.weatherConditions[0]}</p>}
             </div>
             <div>
               <Label htmlFor="majorStreets">Major Streets / Intersections</Label>
-              <Input id="majorStreets" name="majorStreets" placeholder="e.g., A56, Dunham Road" />
+              <Input id="majorStreets" name="majorStreets" placeholder="e.g., A56, Dunham Road" suppressHydrationWarning />
                {state.errors?.majorStreets && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.majorStreets[0]}</p>}
             </div>
             <div>
               <Label htmlFor="constructionUpdates">Construction Updates</Label>
-              <Input id="constructionUpdates" name="constructionUpdates" placeholder="e.g., Road closure on George Street" />
+              <Input id="constructionUpdates" name="constructionUpdates" placeholder="e.g., Road closure on George Street" suppressHydrationWarning />
                {state.errors?.constructionUpdates && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.constructionUpdates[0]}</p>}
             </div>
             <div>
               <Label htmlFor="configuredTips">Admin Configured Tips (Optional)</Label>
-              <Textarea id="configuredTips" name="configuredTips" placeholder="Enter any pre-configured tips here..." />
+              <Textarea id="configuredTips" name="configuredTips" placeholder="Enter any pre-configured tips here..." suppressHydrationWarning />
             </div>
             <SubmitButton />
              {state.message && state.message !== 'success' && (
