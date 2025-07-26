@@ -33,6 +33,7 @@ const Header = () => (
   <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
     <div className="container flex h-16 max-w-screen-2xl items-center px-4 md:px-6">
       <Link href="#" className="mr-auto flex items-center space-x-2">
+        <Shield className="h-8 w-8 text-primary fill-current" />
         <span className="font-bold sm:inline-block text-xl">Top Driving School</span>
       </Link>
       <nav className="hidden items-center justify-center gap-2 text-sm font-medium md:flex">
@@ -50,9 +51,6 @@ const Header = () => (
         <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
           <Link href="#contact">Book Now</Link>
         </Button>
-        <Link href="#" className="flex items-center space-x-2">
-            <Shield className="h-8 w-8 text-primary" />
-        </Link>
         <Sheet>
             <SheetTrigger asChild>
                 <Button variant="outline" size="icon" className="md:hidden">
@@ -74,7 +72,7 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-  <section className="container grid lg:grid-cols-2 gap-12 items-center py-16 md:py-20 px-4 md:px-6">
+  <section className="container grid lg:grid-cols-2 gap-12 items-center py-12 md:py-16 px-4 md:px-6">
     <div className="space-y-6 text-center lg:text-left">
       <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
         Driving Courses
@@ -131,7 +129,7 @@ const services = [
 ];
 
 const ServicesSection = () => (
-    <section id="services" className="w-full py-16 md:py-20 bg-card">
+    <section id="services" className="w-full py-12 md:py-16 bg-card">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
@@ -159,7 +157,7 @@ const ServicesSection = () => (
 );
 
 const TestimonialsSection = () => (
-    <section id="testimonials" className="w-full py-16 md:py-20">
+    <section id="testimonials" className="w-full py-12 md:py-16">
         <div className="container max-w-screen-lg mx-auto px-4 md:px-6">
             <div className="w-full">
                 <div className="space-y-4 mb-12 text-center">
@@ -214,7 +212,7 @@ const testimonials = [
 
 
 const AiTipsSection = () => (
-  <section id="ai-tips" className="py-16 md:py-20 bg-card">
+  <section id="ai-tips" className="py-12 md:py-16 bg-card">
     <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center text-primary">
@@ -231,7 +229,7 @@ const AiTipsSection = () => (
 );
 
 const ContactSection = () => (
-  <section id="contact" className="py-16 md:py-20">
+  <section id="contact" className="py-12 md:py-16">
     <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-primary">Get In Touch</h2>
@@ -319,3 +317,4 @@ export default function Home() {
     </div>
   );
 }
+
