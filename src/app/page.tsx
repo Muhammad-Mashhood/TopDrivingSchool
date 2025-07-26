@@ -33,7 +33,6 @@ const Header = () => (
   <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
     <div className="container flex h-16 max-w-screen-2xl items-center px-4 md:px-6">
       <Link href="#" className="mr-auto flex items-center space-x-2">
-        <Shield className="h-8 w-8 text-primary" />
         <span className="font-bold sm:inline-block text-xl">Top Driving School</span>
       </Link>
       <nav className="hidden items-center justify-center gap-2 text-sm font-medium md:flex">
@@ -41,7 +40,7 @@ const Header = () => (
             <Link key={link.href} href={link.href} className="px-4 text-foreground/80 transition-colors hover:text-foreground">{link.label}</Link>
         ))}
       </nav>
-      <div className="flex flex-1 items-center justify-end space-x-2 md:ml-auto md:flex-none">
+      <div className="flex flex-1 items-center justify-end space-x-4 md:ml-auto md:flex-none">
         <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex">
           <a href="tel:07939662421">
             <Phone className="mr-2 h-4 w-4" />
@@ -51,6 +50,9 @@ const Header = () => (
         <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
           <Link href="#contact">Book Now</Link>
         </Button>
+        <Link href="#" className="flex items-center space-x-2">
+            <Shield className="h-8 w-8 text-primary" />
+        </Link>
         <Sheet>
             <SheetTrigger asChild>
                 <Button variant="outline" size="icon" className="md:hidden">
