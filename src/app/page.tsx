@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   Car,
-  GraduationCap,
   ShieldCheck,
   Star,
   Phone,
@@ -12,6 +11,7 @@ import {
   ChevronRight,
   Route,
   Menu,
+  Sparkle,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -24,7 +24,7 @@ import { DrivingTipsForm } from '@/components/driving-tips-form';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
-    { href: "#courses", label: "Courses" },
+    { href: "#offer", label: "Offer" },
     { href: "#testimonials", label: "Testimonials" },
     { href: "#ai-tips", label: "Tips" },
     { href: "#contact", label: "Contact" },
@@ -35,16 +35,16 @@ const Header = () => (
     <div className="container flex h-16 max-w-screen-2xl items-center">
       <Link href="#" className="mr-auto flex items-center space-x-2">
         <ShieldCheck className="h-8 w-8 text-primary" />
-        <span className="font-bold sm:inline-block text-xl">TopDrivingSchool</span>
+        <span className="font-bold sm:inline-block text-xl">Top Driving</span>
       </Link>
       <nav className="hidden items-center justify-center gap-4 text-sm font-medium md:flex">
          {navLinks.map(link => (
-            <Link key={link.href} href={link.href} className="px-2 text-foreground/60 transition-colors hover:text-foreground/80">{link.label}</Link>
+            <Link key={link.href} href={link.href} className="px-4 text-foreground/60 transition-colors hover:text-foreground/80">{link.label}</Link>
         ))}
       </nav>
       <div className="flex flex-1 items-center justify-end space-x-2 md:ml-auto md:flex-none">
         <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex">
-          <a href="tel:01611234567">
+          <a href="tel:07939662421">
             <Phone className="mr-2 h-4 w-4" />
             Call Now
           </a>
@@ -76,15 +76,15 @@ const HeroSection = () => (
   <section className="container grid lg:grid-cols-2 gap-12 items-center py-20 md:py-32">
     <div className="space-y-6 text-center lg:text-left">
       <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">
-        Learn to Drive with Confidence in Manchester
+        Friendly Automatic Driving Lessons in Altrincham
       </h1>
       <p className="text-lg text-muted-foreground">
-        TopDrivingSchool offers comprehensive, AI-enhanced driving lessons to get you on the road safely and quickly.
+        Professional, patient, and friendly instruction to help you pass your test with confidence. Automatic car only.
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
         <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto">
-          <Link href="#courses">
-            Our Courses <ChevronRight className="ml-2 h-5 w-5" />
+          <Link href="#offer">
+            View Special Offer <ChevronRight className="ml-2 h-5 w-5" />
           </Link>
         </Button>
         <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
@@ -105,54 +105,32 @@ const HeroSection = () => (
   </section>
 );
 
-const courses = [
-  {
-    icon: Car,
-    title: 'Beginner Driving Course',
-    description: 'Perfect for new drivers. Covers all the basics from steering to parking and prepares you for your test.',
-    price: '£550',
-  },
-  {
-    icon: GraduationCap,
-    title: 'Pass Plus Course',
-    description: 'For new drivers who have passed their test. Build confidence and potentially lower insurance premiums.',
-    price: '£200',
-  },
-  {
-    icon: Route,
-    title: 'Refresher Lessons',
-    description: 'Ideal for those who haven’t driven in a while and want to brush up on their skills and confidence.',
-    price: '£35/hour',
-  },
-];
 
-const CoursesSection = () => (
-    <section id="courses" className="py-20 md:py-28 bg-card">
+const OfferSection = () => (
+    <section id="offer" className="py-20 md:py-28 bg-card">
         <div className="container">
             <div className="text-center space-y-4 mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold">Our Driving Courses</h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">We offer a range of courses tailored to your needs, from complete beginners to experienced drivers.</p>
+                <h2 className="text-3xl md:text-4xl font-bold">Our Special Offer</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">We keep it simple with one great plan for learning to drive.</p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
-                {courses.map((course, index) => (
-                    <Card key={index} className="flex flex-col text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <CardHeader className="items-center">
-                            <div className="bg-secondary p-4 rounded-full mb-4">
-                                <course.icon className="h-8 w-8 text-primary" />
-                            </div>
-                            <CardTitle>{course.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex-grow">
-                            <p className="text-muted-foreground">{course.description}</p>
-                        </CardContent>
-                        <div className="p-6 pt-0">
-                            <p className="text-2xl font-bold text-primary">{course.price}</p>
-                             <Button className="mt-4 w-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
-                               <Link href="#contact">Book This Course</Link>
-                             </Button>
+            <div className="flex justify-center">
+                <Card className="w-full max-w-md text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <CardHeader className="items-center">
+                        <div className="bg-secondary p-4 rounded-full mb-4">
+                            <Car className="h-8 w-8 text-primary" />
                         </div>
-                    </Card>
-                ))}
+                        <CardTitle>Automatic Driving Lessons</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                        <p className="text-muted-foreground">Professional and friendly lessons in an automatic car. Perfect for learners of all levels in Altrincham.</p>
+                    </CardContent>
+                    <div className="p-6 pt-0">
+                        <p className="text-4xl font-bold text-primary">£30<span className="text-lg font-medium text-muted-foreground">/hour</span></p>
+                         <Button className="mt-4 w-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+                           <Link href="#contact">Book Your Lesson</Link>
+                         </Button>
+                    </div>
+                </Card>
             </div>
         </div>
     </section>
@@ -265,11 +243,11 @@ const ContactSection = () => (
             <CardContent className="space-y-4 text-muted-foreground">
               <a href="#" className="flex items-center hover:text-primary transition-colors">
                 <MapPin className="h-5 w-5 mr-3 text-primary" />
-                <span>123 Driving Lane, Manchester, M1 1AB</span>
+                <span>Base in Altrincham</span>
               </a>
-              <a href="tel:01611234567" className="flex items-center hover:text-primary transition-colors">
+              <a href="tel:07939662421" className="flex items-center hover:text-primary transition-colors">
                 <Phone className="h-5 w-5 mr-3 text-primary" />
-                <span>0161 123 4567</span>
+                <span>07939 662421</span>
               </a>
               <a href="mailto:contact@topdrivingschool.co.uk" className="flex items-center hover:text-primary transition-colors">
                 <Mail className="h-5 w-5 mr-3 text-primary" />
@@ -294,7 +272,7 @@ const ContactSection = () => (
 const Footer = () => (
   <footer className="bg-card border-t">
     <div className="container py-6 text-center text-muted-foreground">
-      <p>&copy; {new Date().getFullYear()} TopDrivingSchool. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} Top Driving. All rights reserved.</p>
     </div>
   </footer>
 );
@@ -306,7 +284,7 @@ export default function Home() {
       <Header />
       <main className="flex-1 px-4 sm:px-6 lg:px-8">
         <HeroSection />
-        <CoursesSection />
+        <OfferSection />
         <TestimonialsSection />
         <AiTipsSection />
         <ContactSection />
