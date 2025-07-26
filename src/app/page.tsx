@@ -112,14 +112,14 @@ const OfferAndTestimonialsSection = () => (
                     <h2 className="text-3xl md:text-4xl font-bold">Our Special Offer</h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0">We keep it simple with one great plan for learning to drive.</p>
                 </div>
-                <Card className="w-full max-w-md text-center lg:text-left shadow-lg hover:shadow-xl transition-shadow duration-300 mx-auto lg:mx-0">
-                    <CardHeader className="items-center lg:items-start">
+                <Card className="w-full max-w-md text-left shadow-lg hover:shadow-xl transition-shadow duration-300 mx-auto lg:mx-0">
+                    <CardHeader className="items-center lg:items-start text-center lg:text-left">
                         <div className="bg-secondary p-4 rounded-full mb-4">
                             <Car className="h-8 w-8 text-primary" />
                         </div>
                         <CardTitle>Automatic Driving Lessons</CardTitle>
                     </CardHeader>
-                    <CardContent className="flex-grow">
+                    <CardContent className="flex-grow text-center lg:text-left">
                         <p className="text-muted-foreground">Professional and friendly lessons in an automatic car. Perfect for learners of all levels in Altrincham.</p>
                     </CardContent>
                     <div className="p-6 pt-0">
@@ -277,7 +277,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-1 px-4 sm:px-6 lg:px-8">
+      <main className="flex-1">
         <HeroSection />
         <OfferAndTestimonialsSection />
         <AiTipsSection />
