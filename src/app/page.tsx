@@ -37,9 +37,9 @@ const Header = () => (
         <ShieldCheck className="h-8 w-8 text-primary" />
         <span className="font-bold sm:inline-block text-xl">TopDrivingSchool</span>
       </Link>
-      <nav className="hidden items-center justify-center gap-6 text-sm font-medium md:flex">
+      <nav className="hidden items-center justify-center gap-4 text-sm font-medium md:flex">
          {navLinks.map(link => (
-            <Link key={link.href} href={link.href} className="text-foreground/60 transition-colors hover:text-foreground/80">{link.label}</Link>
+            <Link key={link.href} href={link.href} className="px-2 text-foreground/60 transition-colors hover:text-foreground/80">{link.label}</Link>
         ))}
       </nav>
       <div className="flex flex-1 items-center justify-end space-x-2 md:ml-auto md:flex-none">
