@@ -72,7 +72,7 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-  <section className="container grid lg:grid-cols-2 gap-12 items-center py-20 md:py-32 px-4 md:px-6">
+  <section className="container grid lg:grid-cols-2 gap-12 items-center py-16 md:py-24 px-4 md:px-6">
     <div className="space-y-6 text-center lg:text-left">
       <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
         Driving Courses
@@ -129,7 +129,7 @@ const services = [
 ];
 
 const ServicesSection = () => (
-    <section id="services" className="w-full py-20 md:py-28 bg-card">
+    <section id="services" className="w-full py-16 md:py-20 bg-card">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
@@ -157,7 +157,7 @@ const ServicesSection = () => (
 );
 
 const TestimonialsSection = () => (
-    <section id="testimonials" className="w-full py-20 md:py-28">
+    <section id="testimonials" className="w-full py-16 md:py-20">
         <div className="container max-w-screen-lg mx-auto px-4 md:px-6">
             <div className="w-full">
                 <div className="space-y-4 mb-12 text-center">
@@ -171,6 +171,7 @@ const TestimonialsSection = () => (
                                 <div className="p-1 h-full">
                                     <Card className="flex flex-col justify-between h-full p-6 bg-card shadow-md">
                                         <CardContent className="p-0 text-left">
+
                                             <div className="flex mb-4">
                                                 {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}
                                             </div>
@@ -211,7 +212,7 @@ const testimonials = [
 
 
 const AiTipsSection = () => (
-  <section id="ai-tips" className="py-20 md:py-28 bg-card">
+  <section id="ai-tips" className="py-16 md:py-20 bg-card">
     <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center text-primary">
@@ -228,7 +229,7 @@ const AiTipsSection = () => (
 );
 
 const ContactSection = () => (
-  <section id="contact" className="py-20 md:py-28">
+  <section id="contact" className="py-16 md:py-20">
     <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-primary">Get In Touch</h2>
