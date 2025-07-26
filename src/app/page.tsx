@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   Car,
-  ShieldCheck,
+  Shield,
   Star,
   Phone,
   Mail,
@@ -33,7 +33,7 @@ const Header = () => (
   <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
     <div className="container flex h-16 max-w-screen-2xl items-center px-4 md:px-6">
       <Link href="#" className="mr-auto flex items-center space-x-2">
-        <Car className="h-8 w-8 text-primary" />
+        <Shield className="h-8 w-8 text-primary" />
         <span className="font-bold sm:inline-block text-xl">Top Driving School</span>
       </Link>
       <nav className="hidden items-center justify-center gap-2 text-sm font-medium md:flex">
@@ -72,7 +72,7 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-  <section className="container grid lg:grid-cols-2 gap-12 items-center py-16 md:py-24 px-4 md:px-6">
+  <section className="container grid lg:grid-cols-2 gap-12 items-center py-16 md:py-20 px-4 md:px-6">
     <div className="space-y-6 text-center lg:text-left">
       <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
         Driving Courses
