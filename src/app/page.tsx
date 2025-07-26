@@ -302,9 +302,9 @@ const Footer = () => (
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-background px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 px-4 sm:px-6 lg:px-8">
         <HeroSection />
         <CoursesSection />
         <TestimonialsSection />
