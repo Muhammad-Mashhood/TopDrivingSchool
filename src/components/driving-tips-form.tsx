@@ -30,32 +30,32 @@ export function DrivingTipsForm() {
   const [state, formAction] = useActionState(getDrivingTips, initialState);
 
   return (
-    <div className="grid gap-8 md:grid-cols-2 items-start" suppressHydrationWarning>
-      <Card className="shadow-lg">
+    <div className="grid gap-8 md:grid-cols-2 items-start">
+      <Card className="shadow-lg bg-card">
         <CardHeader>
           <CardTitle>Driving Conditions Input</CardTitle>
-          <CardDescription>Enter current Manchester driving conditions to get tailored tips.</CardDescription>
+          <CardDescription>Enter current Altrincham driving conditions to get tailored tips.</CardDescription>
         </CardHeader>
         <CardContent>
-          <form action={formAction} className="space-y-4">
+          <form action={formAction} className="space-y-4" suppressHydrationWarning>
             <div>
               <Label htmlFor="weatherConditions">Weather Conditions</Label>
-              <Input id="weatherConditions" name="weatherConditions" placeholder="e.g., Heavy rain, foggy" suppressHydrationWarning />
+              <Input id="weatherConditions" name="weatherConditions" placeholder="e.g., Heavy rain, foggy" />
               {state.errors?.weatherConditions && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.weatherConditions[0]}</p>}
             </div>
             <div>
               <Label htmlFor="majorStreets">Major Streets / Intersections</Label>
-              <Input id="majorStreets" name="majorStreets" placeholder="e.g., A6, Mancunian Way" suppressHydrationWarning />
+              <Input id="majorStreets" name="majorStreets" placeholder="e.g., A56, Dunham Road" />
                {state.errors?.majorStreets && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.majorStreets[0]}</p>}
             </div>
             <div>
               <Label htmlFor="constructionUpdates">Construction Updates</Label>
-              <Input id="constructionUpdates" name="constructionUpdates" placeholder="e.g., Road closure on Deansgate" suppressHydrationWarning />
+              <Input id="constructionUpdates" name="constructionUpdates" placeholder="e.g., Road closure on George Street" />
                {state.errors?.constructionUpdates && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.constructionUpdates[0]}</p>}
             </div>
             <div>
               <Label htmlFor="configuredTips">Admin Configured Tips (Optional)</Label>
-              <Textarea id="configuredTips" name="configuredTips" placeholder="Enter any pre-configured tips here..." suppressHydrationWarning />
+              <Textarea id="configuredTips" name="configuredTips" placeholder="Enter any pre-configured tips here..." />
             </div>
             <SubmitButton />
              {state.message && state.message !== 'success' && (
@@ -68,10 +68,10 @@ export function DrivingTipsForm() {
         </CardContent>
       </Card>
 
-      <Card className="flex flex-col shadow-lg min-h-[580px]">
+      <Card className="flex flex-col shadow-lg min-h-[580px] bg-card">
         <CardHeader>
           <CardTitle>Your AI-Powered Driving Tips</CardTitle>
-          <CardDescription>Here are your personalized tips for driving safely in Manchester today.</CardDescription>
+          <CardDescription>Here are your personalized tips for driving safely in Altrincham today.</CardDescription>
         </CardHeader>
         <CardContent className="flex-grow flex">
           {state.tips && state.tips.length > 0 ? (
