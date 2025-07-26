@@ -105,57 +105,59 @@ const HeroSection = () => (
 );
 
 const OfferAndTestimonialsSection = () => (
-    <section id="offer" className="py-20 md:py-28 bg-card">
-        <div className="container grid lg:grid-cols-2 gap-16 items-start">
-            <div>
-                <div className="space-y-4 mb-12 text-center lg:text-left">
-                    <h2 className="text-3xl md:text-4xl font-bold">Our Special Offer</h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0">We keep it simple with one great plan for learning to drive.</p>
-                </div>
-                <Card className="w-full max-w-md text-left shadow-lg hover:shadow-xl transition-shadow duration-300 mx-auto lg:mx-0">
-                    <CardHeader className="items-center lg:items-start text-center lg:text-left">
-                        <div className="bg-secondary p-4 rounded-full mb-4">
-                            <Car className="h-8 w-8 text-primary" />
-                        </div>
-                        <CardTitle>Automatic Driving Lessons</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-grow text-center lg:text-left">
-                        <p className="text-muted-foreground">Professional and friendly lessons in an automatic car. Perfect for learners of all levels in Altrincham.</p>
-                    </CardContent>
-                    <div className="p-6 pt-0">
-                        <p className="text-4xl font-bold text-primary text-center">£30<span className="text-lg font-medium text-muted-foreground">/hour</span></p>
-                         <Button className="mt-4 w-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
-                           <Link href="#contact">Book Your Lesson</Link>
-                         </Button>
+    <section id="offer" className="w-full py-20 md:py-28 bg-card">
+        <div className="container max-w-screen-xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+                <div>
+                    <div className="space-y-4 mb-12 text-center lg:text-left">
+                        <h2 className="text-3xl md:text-4xl font-bold">Our Special Offer</h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0">We keep it simple with one great plan for learning to drive.</p>
                     </div>
-                </Card>
-            </div>
-            <div id="testimonials">
-                <div className="space-y-4 mb-12 text-center lg:text-left">
-                    <h2 className="text-3xl md:text-4xl font-bold">What Our Students Say</h2>
-                    <p className="text-lg text-muted-foreground">We're proud to have helped so many people become confident drivers.</p>
+                    <Card className="w-full max-w-md text-left shadow-lg hover:shadow-xl transition-shadow duration-300 mx-auto lg:mx-0">
+                        <CardHeader className="items-center lg:items-start text-center lg:text-left">
+                            <div className="bg-secondary p-4 rounded-full mb-4">
+                                <Car className="h-8 w-8 text-primary" />
+                            </div>
+                            <CardTitle>Automatic Driving Lessons</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-grow text-center lg:text-left">
+                            <p className="text-muted-foreground">Professional and friendly lessons in an automatic car. Perfect for learners of all levels in Altrincham.</p>
+                        </CardContent>
+                        <div className="p-6 pt-0">
+                            <p className="text-4xl font-bold text-primary text-center">£30<span className="text-lg font-medium text-muted-foreground">/hour</span></p>
+                            <Button className="mt-4 w-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+                            <Link href="#contact">Book Your Lesson</Link>
+                            </Button>
+                        </div>
+                    </Card>
                 </div>
-                <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-xl mx-auto lg:mx-0">
-                    <CarouselContent>
-                        {testimonials.map((testimonial, index) => (
-                            <CarouselItem key={index}>
-                                <div className="p-1 h-full">
-                                    <Card className="flex flex-col justify-between h-full p-6 shadow-md">
-                                        <CardContent className="p-0">
-                                            <div className="flex mb-4">
-                                                {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}
-                                            </div>
-                                            <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
-                                        </CardContent>
-                                        <p className="font-bold text-right pt-4">- {testimonial.name}</p>
-                                    </Card>
-                                </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="hidden sm:flex" />
-                    <CarouselNext className="hidden sm:flex" />
-                </Carousel>
+                <div id="testimonials">
+                    <div className="space-y-4 mb-12 text-center lg:text-left">
+                        <h2 className="text-3xl md:text-4xl font-bold">What Our Students Say</h2>
+                        <p className="text-lg text-muted-foreground">We're proud to have helped so many people become confident drivers.</p>
+                    </div>
+                    <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-xl mx-auto lg:mx-0">
+                        <CarouselContent>
+                            {testimonials.map((testimonial, index) => (
+                                <CarouselItem key={index}>
+                                    <div className="p-1 h-full">
+                                        <Card className="flex flex-col justify-between h-full p-6 shadow-md">
+                                            <CardContent className="p-0">
+                                                <div className="flex mb-4">
+                                                    {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}
+                                                </div>
+                                                <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
+                                            </CardContent>
+                                            <p className="font-bold text-right pt-4">- {testimonial.name}</p>
+                                        </Card>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious className="hidden sm:flex" />
+                        <CarouselNext className="hidden sm:flex" />
+                    </Carousel>
+                </div>
             </div>
         </div>
     </section>
