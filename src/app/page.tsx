@@ -234,14 +234,14 @@ const ContactSection = () => (
         <h2 className="text-3xl md:text-4xl font-bold text-primary">Get In Touch</h2>
         <p className="text-lg text-muted-foreground">Have questions? Want to book a lesson? Reach out to us!</p>
       </div>
-      <div className="grid md:grid-cols-2 gap-12 items-start">
-        <Card className="shadow-lg bg-card">
+      <div className="grid md:grid-cols-2 gap-12 items-stretch">
+        <Card className="shadow-lg bg-card flex flex-col">
           <CardHeader>
             <CardTitle>Request Information</CardTitle>
             <CardDescription>Fill out the form and we'll get back to you as soon as possible.</CardDescription>
           </CardHeader>
-          <CardContent>
-            <form className="space-y-4">
+          <CardContent className="flex-grow flex flex-col">
+            <form className="space-y-4 flex flex-col flex-grow">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
                 <Input id="name" placeholder="Your Name" suppressHydrationWarning />
@@ -250,9 +250,9 @@ const ContactSection = () => (
                 <Label htmlFor="email">Email</Label>
                 <Input id="email" type="email" placeholder="your@email.com" suppressHydrationWarning />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 flex-grow flex flex-col">
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Your questions or comments..." suppressHydrationWarning />
+                <Textarea id="message" placeholder="Your questions or comments..." className="flex-grow" suppressHydrationWarning />
               </div>
               <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">Send Message</Button>
             </form>
@@ -283,7 +283,7 @@ const ContactSection = () => (
             alt="Map of Altrincham"
             width={600}
             height={450}
-            className="rounded-lg shadow-lg w-full"
+            className="rounded-lg shadow-lg w-full h-auto object-cover"
             data-ai-hint="city map"
           />
         </div>
