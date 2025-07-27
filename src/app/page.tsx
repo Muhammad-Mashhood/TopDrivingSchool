@@ -36,22 +36,12 @@ const Logo = () => (
       className="h-12 w-12 text-primary fill-current"
     >
       <g>
-        {/* Shield */}
         <path d="M50 15 C 40 20, 20 25, 20 50 C 20 75, 40 80, 50 85 C 60 80, 80 75, 80 50 C 80 25, 60 20, 50 15 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-        
-        {/* Crown */}
         <path d="M40 18 Q 50 10, 60 18 L 55 25 L 50 20 L 45 25 Z" />
-        
-        {/* T */}
         <path d="M40 35 L 60 35 M 50 35 L 50 65 Q 45 70, 40 65" fill="none" stroke="currentColor" strokeWidth="4" />
-
-        {/* Left Flourish */}
         <path d="M20 50 C 25 40, 30 30, 40 25" fill="none" stroke="currentColor" strokeWidth="2"/>
         <path d="M20 50 C 15 60, 25 75, 35 80" fill="none" stroke="currentColor" strokeWidth="2"/>
         <path d="M30 40 C 20 45, 15 55, 20 65" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-
-
-        {/* Right Flourish */}
         <path d="M80 50 C 75 40, 70 30, 60 25" fill="none" stroke="currentColor" strokeWidth="2"/>
         <path d="M80 50 C 85 60, 75 75, 65 80" fill="none" stroke="currentColor" strokeWidth="2"/>
         <path d="M70 40 C 80 45, 85 55, 80 65" fill="none" stroke="currentColor" strokeWidth="1.5"/>
