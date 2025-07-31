@@ -81,7 +81,7 @@ const Header = () => (
         </Button>
          <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex">
           <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer">
-            <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977120/WhatsApp_Logo_Redondo_%C3%8Dcone_PNG_Sem_Fundo_xkpzbt.jpg" alt="WhatsApp" width={16} height={16} className="mr-2" />
+            <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={16} height={16} className="mr-2" />
             WhatsApp
           </a>
         </Button>
