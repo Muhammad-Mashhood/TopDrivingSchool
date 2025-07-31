@@ -72,17 +72,14 @@ const Header = () => (
             <Link key={link.href} href={link.href} className="px-4 text-foreground/80 transition-colors hover:text-foreground">{link.label}</Link>
         ))}
       </nav>
-      <div className="flex flex-1 items-center justify-end space-x-2 md:ml-auto md:flex-none">
+      <div className="flex flex-1 items-center justify-end space-x-4 md:ml-auto md:flex-none">
+        <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex">
+            <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={24} height={24} />
+        </a>
         <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex">
           <a href="tel:+447939662421">
             <Phone className="mr-2 h-4 w-4" />
             Call Now
-          </a>
-        </Button>
-         <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex">
-          <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer">
-            <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={16} height={16} className="mr-2" />
-            WhatsApp
           </a>
         </Button>
         <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
@@ -415,5 +412,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
