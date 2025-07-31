@@ -48,7 +48,7 @@ const Logo = () => (
       viewBox="0 0 100 100"
       className="h-12 w-12 text-primary fill-current"
     >
-      <g>
+      
         <path d="M50 15 C 40 20, 20 25, 20 50 C 20 75, 40 80, 50 85 C 60 80, 80 75, 80 50 C 80 25, 60 20, 50 15 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
         <path d="M40 18 Q 50 10, 60 18 L 55 25 L 50 20 L 45 25 Z" />
         <path d="M40 35 L 60 35 M 50 35 L 50 65 Q 45 70, 40 65" fill="none" stroke="currentColor" strokeWidth="4" />
@@ -58,7 +58,7 @@ const Logo = () => (
         <path d="M80 50 C 75 40, 70 30, 60 25" fill="none" stroke="currentColor" strokeWidth="2"/>
         <path d="M80 50 C 85 60, 75 75, 65 80" fill="none" stroke="currentColor" strokeWidth="2"/>
         <path d="M70 40 C 80 45, 85 55, 80 65" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-      </g>
+      
     </svg>
 )
 
@@ -111,7 +111,7 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-  <section className="container grid lg:grid-cols-2 gap-12 items-center py-12 md:py-16 px-4 md:px-6">
+  <section className="container grid lg:grid-cols-2 gap-8 items-center py-8 md:py-12 px-4 md:px-6">
     <div className="space-y-6 text-center lg:text-left">
       <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
         Driving Courses
@@ -168,7 +168,7 @@ const services = [
 ];
 
 const ServicesSection = () => (
-    <section id="services" className="w-full py-12 md:py-16 bg-card">
+    <section id="services" className="w-full py-8 md:py-12 bg-card">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
@@ -195,63 +195,75 @@ const ServicesSection = () => (
     </section>
 );
 
-const TestimonialsSection = () => (
-    <section id="testimonials" className="w-full py-12 md:py-16">
-        <div className="container max-w-screen-lg mx-auto px-4 md:px-6">
-            <div className="w-full">
-                <div className="space-y-4 mb-12 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary">What Our Students Say</h2>
-                    <p className="text-lg text-muted-foreground">We're proud to have helped so many people become confident drivers.</p>
-                </div>
-                <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-xl mx-auto">
-                    <CarouselContent>
-                        {testimonials.map((testimonial, index) => (
-                            <CarouselItem key={index}>
-                                <div className="p-1 h-full">
-                                    <Card className="flex flex-col justify-between h-full p-6 bg-card shadow-md">
-                                        <CardContent className="p-0 text-left">
-
-                                            <div className="flex mb-4">
-                                                {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}
-                                            </div>
-                                            <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
-                                        </CardContent>
-                                        <p className="font-bold text-right pt-4">- {testimonial.name}</p>
-                                    </Card>
-                                </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="hidden sm:flex" />
-                    <CarouselNext className="hidden sm:flex" />
-                </Carousel>
-            </div>
-        </div>
-    </section>
-);
-
 const testimonials = [
   {
     name: 'Sarah L.',
     quote: 'My instructor was patient and encouraging. I passed my test on the first try! The AI tips for navigating the city centre were a game-changer.',
+    image: 'https://placehold.co/800x600.png',
   },
   {
     name: 'Tom H.',
     quote: 'A fantastic experience from start to finish. The booking process was easy, and the lessons were tailored to my learning speed. Highly recommend!',
+    image: 'https://placehold.co/800x600.png',
   },
   {
     name: 'Emily R.',
     quote: 'I was a very nervous driver, but TopDrivingSchool helped me build so much confidence. I now feel safe and competent on the road.',
+    image: 'https://placehold.co/800x600.png',
   },
   {
     name: 'David P.',
     quote: 'The Pass Plus course was brilliant. I feel much more comfortable on motorways and driving at night. Well worth it.',
+    image: 'https://placehold.co/800x600.png',
   },
 ];
 
+const TestimonialsSection = () => (
+    <section id="testimonials" className="w-full py-8 md:py-12">
+        <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center space-y-4 mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary">What Our Students Say</h2>
+                <p className="text-lg text-muted-foreground">We're proud to have helped so many people become confident drivers.</p>
+            </div>
+            <Carousel opts={{ align: "start", loop: true }} className="w-full">
+                <CarouselContent>
+                    {testimonials.map((testimonial, index) => (
+                        <CarouselItem key={index}>
+                            <div className="p-1 h-full">
+                                <Card className="overflow-hidden shadow-lg bg-card">
+                                    <div className="grid md:grid-cols-2 items-center">
+                                        <div className="md:order-2">
+                                            <Image 
+                                                src={testimonial.image}
+                                                alt={`Testimonial from ${testimonial.name}`}
+                                                width={800}
+                                                height={600}
+                                                className="object-cover w-full h-full"
+                                                data-ai-hint="happy student"
+                                            />
+                                        </div>
+                                        <div className="p-6 md:p-8 flex flex-col justify-center h-full">
+                                            <div className="flex mb-4">
+                                                {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}
+                                            </div>
+                                            <blockquote className="text-muted-foreground italic text-lg">"{testimonial.quote}"</blockquote>
+                                            <p className="font-bold text-right mt-4">- {testimonial.name}</p>
+                                        </div>
+                                    </div>
+                                </Card>
+                            </div>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden sm:flex" />
+                <CarouselNext className="hidden sm:flex" />
+            </Carousel>
+        </div>
+    </section>
+);
 
 const AiTipsSection = () => (
-  <section id="ai-tips" className="py-12 md:py-16 bg-card">
+  <section id="ai-tips" className="py-8 md:py-12 bg-card">
     <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center text-primary">
@@ -268,7 +280,7 @@ const AiTipsSection = () => (
 );
 
 const ContactSection = () => (
-  <section id="contact" className="py-12 md:py-16">
+  <section id="contact" className="py-8 md:py-12">
     <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-primary">Get In Touch</h2>
@@ -360,3 +372,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
