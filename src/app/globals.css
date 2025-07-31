@@ -80,7 +80,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-color: #111;
   }
 
   body::before {
