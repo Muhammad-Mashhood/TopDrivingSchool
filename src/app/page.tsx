@@ -229,7 +229,6 @@ const PricingSection = () => (
                 ))}
             </div>
         </div>
-         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </section>
 );
 
