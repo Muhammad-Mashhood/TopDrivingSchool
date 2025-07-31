@@ -99,10 +99,6 @@ const Header = () => (
 
 const HeroSection = () => (
   <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
-     <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-gray-900 to-black">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,215,0,0.2)_0%,_rgba(255,255,255,0)_40%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(128,0,128,0.3)_0%,_rgba(255,255,255,0)_50%)]"></div>
-    </div>
     <div className="container relative z-10 grid md:grid-cols-2 gap-8 items-center py-12 px-4 md:px-6">
       <div className="space-y-6 text-center md:text-left">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
@@ -162,10 +158,6 @@ const services = [
 
 const ServicesSection = () => (
     <section id="services" className="relative w-full py-16 flex flex-col justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-tr from-gray-900 via-black to-purple-900">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,215,0,0.15)_0%,_rgba(255,255,255,0)_40%)]"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(255,255,255,0.1)_0%,_rgba(255,255,255,0)_40%)]"></div>
-        </div>
         <div className="container relative mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
@@ -212,10 +204,6 @@ const pricingTiers = [
 
 const PricingSection = () => (
     <section id="pricing" className="relative w-full py-16 flex flex-col justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-bl from-black via-gray-900 to-purple-900">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,215,0,0.2)_0%,_rgba(255,255,255,0)_30%)]"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.1)_0%,_rgba(255,255,255,0)_50%)]"></div>
-        </div>
         <div className="container relative mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Pricing</h2>
@@ -279,9 +267,6 @@ const TestimonialsSection = () => {
 
     return (
         <section id="testimonials" className="relative w-full py-8 overflow-hidden">
-             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-purple-900 to-black">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,215,0,0.1)_0%,_rgba(255,255,255,0)_50%)]"></div>
-            </div>
             <div className="container relative mx-auto px-4 md:px-6">
                 <div className="text-center space-y-4 mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary">What Our Students Say</h2>
@@ -330,9 +315,6 @@ const TestimonialsSection = () => {
 
 const AiTipsSection = () => (
   <section id="ai-tips" className="relative py-8 overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-r from-purple-900 via-black to-gray-900">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,215,0,0.15)_0%,_rgba(255,255,255,0)_40%)]"></div>
-    </div>
     <div className="container relative px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center text-primary">
@@ -350,9 +332,6 @@ const AiTipsSection = () => (
 
 const ContactSection = () => (
   <section id="contact" className="relative py-8 overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-l from-gray-900 via-black to-purple-900">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(255,215,0,0.1)_0%,_rgba(255,255,255,0)_40%)]"></div>
-    </div>
     <div className="container relative px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-primary">Get In Touch</h2>
@@ -426,7 +405,6 @@ const ContactSection = () => (
 
 const Footer = () => (
   <footer className="relative bg-black overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-t from-black via-gray-900 to-purple-900 opacity-50"></div>
     <div className="container relative py-6 text-center text-muted-foreground px-4 md:px-6">
       <p>&copy; {new Date().getFullYear()} Top Driving School. All rights reserved.</p>
     </div>
@@ -438,7 +416,9 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 bg-gradient-to-b from-purple-900 via-black to-purple-900">
+        <div className="absolute inset-0 top-0 h-full w-full bg-[radial-gradient(ellipse_at_top,_rgba(255,215,0,0.2)_0%,_rgba(0,0,0,0)_40%)]"></div>
+        <div className="absolute inset-0 top-0 h-full w-full bg-[radial-gradient(ellipse_at_bottom,_rgba(255,255,255,0.1)_0%,_rgba(0,0,0,0)_50%)]"></div>
         <HeroSection />
         <ServicesSection />
         <PricingSection />
@@ -450,5 +430,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
