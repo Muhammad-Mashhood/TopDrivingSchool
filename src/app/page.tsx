@@ -194,32 +194,50 @@ const ServicesSection = () => (
     </section>
 );
 
+const pricingTiers = [
+    {
+        title: "1 Hour Lesson",
+        price: "£30",
+        description: "Flexible and tailored to your pace (automatic car only).",
+    },
+    {
+        title: "2 Hours Block",
+        price: "£70",
+        description: "Save on a longer, more intensive driving session.",
+    },
+    {
+        title: "10 Hours Package",
+        price: "£350",
+        description: "Best value for a comprehensive learning experience.",
+    },
+]
+
 const PricingSection = () => (
     <section id="pricing" className="w-full py-16 flex flex-col justify-center">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Pricing</h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Simple, transparent pricing. Get on the road with our special offer.
+                    Simple, transparent pricing. Get on the road with our special offers.
                 </p>
             </div>
-            <div className="flex justify-center">
-                <Card className="max-w-sm w-full transition-all duration-300 border-0 hover:shadow-2xl hover:-translate-y-1">
-                    <CardHeader className="text-center bg-card p-6 border-0">
-                        <CardTitle className="text-2xl">Hourly Lessons</CardTitle>
-                        <CardDescription>Flexible and tailored to your pace (automatic car only).</CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-6 text-center flex flex-col items-center justify-center">
-                         <div className="flex items-baseline justify-center mb-4">
-                            <span className="text-5xl font-bold">£30</span>
-                            <span className="text-muted-foreground">/hour</span>
-                        </div>
-                        <p className="text-muted-foreground mb-6">Our special offer price.</p>
-                        <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                           <Link href="#contact">Book Now</Link>
-                        </Button>
-                    </CardContent>
-                </Card>
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                {pricingTiers.map((tier) => (
+                    <Card key={tier.title} className="w-full transition-all duration-300 bg-card border border-primary/20 hover:shadow-primary/20 shadow-lg hover:-translate-y-1 flex flex-col">
+                        <CardHeader className="text-center p-6">
+                            <CardTitle className="text-2xl">{tier.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="p-6 text-center flex flex-col items-center justify-center flex-grow">
+                             <div className="flex items-baseline justify-center mb-4">
+                                <span className="text-5xl font-bold">{tier.price}</span>
+                            </div>
+                            <p className="text-muted-foreground mb-6 h-12">{tier.description}</p>
+                            <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mt-auto">
+                               <Link href="#contact">Book Now</Link>
+                            </Button>
+                        </CardContent>
+                    </Card>
+                ))}
             </div>
         </div>
     </section>
