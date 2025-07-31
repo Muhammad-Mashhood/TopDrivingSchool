@@ -109,7 +109,7 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-  <section className="container grid lg:grid-cols-2 gap-8 items-center py-8 px-4 md:px-6">
+  <section className="container grid lg:grid-cols-2 gap-8 items-center py-12 px-4 md:px-6 md:min-h-[calc(100vh-4rem)]">
     <div className="space-y-6 text-center lg:text-left">
       <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
         Driving Courses
@@ -268,7 +268,7 @@ const TestimonialsSection = () => {
                     plugins={[plugin.current]}
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
-                    className="w-full max-w-6xl mx-auto"
+                    className="w-full max-w-4xl mx-auto"
                 >
                     <CarouselContent>
                         {testimonials.map((testimonial, index) => (
@@ -415,3 +415,4 @@ export default function Home() {
     </div>
   );
 }
+
