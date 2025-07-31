@@ -177,7 +177,7 @@ const ServicesSection = () => (
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {services.map((service) => (
-                    <Card key={service.title} className="bg-background/50 text-center flex flex-col items-center p-6 shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+                    <Card key={service.title} className="bg-background/50 text-center flex flex-col items-center p-6 shadow-lg hover:shadow-primary/20 transition-shadow duration-300 border-0">
                         <div className="bg-secondary p-4 rounded-full mb-4">
                             <service.icon className="h-8 w-8 text-primary" />
                         </div>
@@ -204,7 +204,7 @@ const PricingSection = () => (
                 </p>
             </div>
             <div className="flex justify-center">
-                <Card className="max-w-sm w-full shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+                <Card className="max-w-sm w-full shadow-lg hover:shadow-primary/20 transition-shadow duration-300 border-0">
                     <CardHeader className="text-center bg-card p-6">
                         <CardTitle className="text-2xl">Hourly Lessons</CardTitle>
                         <CardDescription>Flexible and tailored to your pace (automatic car only).</CardDescription>
@@ -275,7 +275,7 @@ const TestimonialsSection = () => {
                         {testimonials.map((testimonial, index) => (
                             <CarouselItem key={index} className="md:basis-1/1">
                                 <div className="p-1 h-full">
-                                    <Card className="overflow-hidden shadow-lg bg-background">
+                                    <Card className="overflow-hidden shadow-lg bg-background border-0">
                                         <div className="grid md:grid-cols-2 items-center">
                                             <div className="relative md:order-2 w-full h-[400px]">
                                                 <Image 
@@ -330,7 +330,7 @@ const ContactSection = () => (
         <p className="text-lg text-muted-foreground">Have questions? Want to book a lesson? Reach out to us!</p>
       </div>
       <div className="grid md:grid-cols-2 gap-12 items-stretch">
-        <Card className="shadow-lg bg-background flex flex-col">
+        <Card className="shadow-lg bg-background flex flex-col border-0">
           <CardHeader>
             <CardTitle>Request Information</CardTitle>
             <CardDescription>Fill out the form and we'll get back to you as soon as possible.</CardDescription>
@@ -354,7 +354,7 @@ const ContactSection = () => (
           </CardContent>
         </Card>
         <div className="space-y-8">
-          <Card className="shadow-lg bg-background">
+          <Card className="shadow-lg bg-background border-0">
             <CardHeader>
               <CardTitle>Contact Details</CardTitle>
             </CardHeader>
