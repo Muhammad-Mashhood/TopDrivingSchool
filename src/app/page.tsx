@@ -269,7 +269,7 @@ const TestimonialsSection = () => {
                     plugins={[plugin.current]}
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
-                    className="w-full max-w-4xl mx-auto"
+                    className="w-full max-w-6xl mx-auto"
                 >
                     <CarouselContent>
                         {testimonials.map((testimonial, index) => (
@@ -402,7 +402,7 @@ const Footer = () => (
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
         <HeroSection />
