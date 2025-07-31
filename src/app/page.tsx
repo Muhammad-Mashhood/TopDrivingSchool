@@ -166,7 +166,7 @@ const services = [
 ];
 
 const ServicesSection = () => (
-    <section id="services" className="w-full py-8 bg-card">
+    <section id="services" className="w-full py-16 bg-card md:min-h-[calc(100vh-4rem)] flex flex-col justify-center">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
@@ -194,7 +194,7 @@ const ServicesSection = () => (
 );
 
 const PricingSection = () => (
-    <section id="pricing" className="w-full py-8">
+    <section id="pricing" className="w-full py-16 md:min-h-[calc(100vh-4rem)] flex flex-col justify-center">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Pricing</h2>
@@ -268,7 +268,7 @@ const TestimonialsSection = () => {
                     plugins={[plugin.current]}
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
-                    className="w-full max-w-4xl mx-auto"
+                    className="w-full max-w-6xl mx-auto"
                 >
                     <CarouselContent>
                         {testimonials.map((testimonial, index) => (
