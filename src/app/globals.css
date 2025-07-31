@@ -130,15 +130,11 @@
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     
-    /* Border & Edges */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    
     /* Shadows & Depth */
     box-shadow: 
       0 8px 16px rgba(0,0,0,0.2),  /* Drop shadow for lift */
-      0 0 2px rgba(255,255,255,0.15), /* Outer glow */
       inset 0 2px 3px rgba(255,255,255,0.25), /* Inner top highlight */
-      inset 0 -2px 3px rgba(0,0,0,0.25); /* Inner bottom shading */
+      inset 0 -4px 5px rgba(0,0,0,0.3); /* Inner bottom shading */
   }
   .navbar-glass::before {
     content: "";
