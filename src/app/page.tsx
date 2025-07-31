@@ -62,7 +62,7 @@ const Header = () => (
          </div>
       </nav>
       <div className="flex flex-1 items-center justify-end space-x-4 md:ml-auto md:flex-none">
-        <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex">
+        <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex button-3d h-9 w-9 p-0 items-center justify-center rounded-full">
             <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={24} height={24} />
         </a>
         <Button size="sm" asChild className="hidden sm:inline-flex rounded-full button-3d">
