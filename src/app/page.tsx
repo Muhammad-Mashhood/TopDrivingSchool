@@ -52,19 +52,18 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const Logo = () => (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 100 100"
-      className="h-12 w-12 text-primary fill-current"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        className="h-12 w-12 text-primary fill-current"
     >
-        <path d="M50 15 C 40 20, 20 25, 20 50 C 20 75, 40 80, 50 85 C 60 80, 80 75, 80 50 C 80 25, 60 20, 50 15 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <path d="M40 18 Q 50 10, 60 18 L 55 25 L 50 20 L 45 25 Z" />
-        <path d="M40 35 L 60 35 M 50 35 L 50 65 Q 45 70, 40 65" fill="none" stroke="currentColor" strokeWidth="4" />
-        <path d="M20 50 C 25 40, 30 30, 40 25" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <path d="M20 50 C 15 60, 25 75, 35 80" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <path d="M30 40 C 20 45, 15 55, 20 65" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M80 50 C 75 40, 70 30, 60 25" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <path d="M80 50 C 85 60, 75 75, 65 80" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <path d="M70 40 C 80 45, 85 55, 80 65" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+        <g transform="translate(0, -2)">
+        <path d="M50,15 C 45,16 40,18 35,20 C 30,22 25,25 22,30 C 19,35 18,40 18,45 C 18,50 19,55 22,60 C 25,65 30,70 35,75 C 40,80 45,82 50,83 C 55,82 60,80 65,75 C 70,70 75,65 78,60 C 81,55 82,50 82,45 C 82,40 81,35 78,30 C 75,25 70,22 65,20 C 60,18 55,16 50,15 M50,12 C55,13 61,15 67,18 C73,21 78,25 82,30 C86,35 88,41 88,47 C 88,53 86,59 82,64 C 78,69 73,73 67,76 C 61,79 55,81 50,81 C 45,81 39,79 33,76 C 27,73 22,69 18,64 C 14,59 12,53 12,47 C 12,41 14,35 18,30 C 22,25 27,21 33,18 C 39,15 45,13 50,12 Z" fill="hsl(var(--primary))" />
+        <path d="M48,15.5 C 49,14 51,14 52,15.5 L 54,18 L 51,20 L 49,18 Z M45,18 C 42,19 40,22 40,25 C 40,28 42,30 45,31 L 44,28 C 43,27 43,26 44,25 C 45,24 46,24 47,25 L 48,22 C 46,20 45,19 45,18 Z M55,18 C 58,19 60,22 60,25 C 60,28 58,30 55,31 L 56,28 C 57,27 57,26 56,25 C 55,24 54,24 53,25 L 52,22 C 54,20 55,19 55,18 Z M38,28 C 35,28 32,30 30,33 C 28,36 27,40 27,44 C 27,48 28,52 30,55 C 32,58 35,60 38,60 L 38,57 C 36,57 34,56 33,54 C 32,52 31,49 31,46 C 31,43 32,40 33,38 C 34,36 36,35 38,35 L 38,32 C 37,30 36,29 38,28 Z M62,28 C 65,28 68,30 70,33 C 72,36 73,40 73,44 C 73,48 72,52 70,55 C 68,58 65,60 62,60 L 62,57 C 64,57 66,56 67,54 C 68,52 69,49 69,46 C 69,43 68,40 67,38 C 66,36 64,35 62,35 L 62,32 C 63,30 64,29 62,28 Z M40,62 C 38,63 36,65 35,68 C 34,71 34,74 35,77 C 36,80 38,82 40,83 L 41,80 C 39,79 38,78 37,76 C 36,74 36,72 37,70 C 38,68 39,67 41,66 Z M60,62 C 62,63 64,65 65,68 C 66,71 66,74 65,77 C 64,80 62,82 60,83 L 59,80 C 61,79 62,78 63,76 C 64,74 64,72 63,70 C 62,68 61,67 59,66 Z M25,40 C 23,42 22,45 22,48 C 22,51 23,54 25,56 L 27,54 C 26,53 25,51 25,48 C 25,45 26,43 27,42 Z M75,40 C 77,42 78,45 78,48 C 78,51 77,54 75,56 L 73,54 C 74,53 75,51 75,48 C 75,45 74,43 73,42 Z" fill="hsl(var(--primary))"/>
+        <text x="50" y="52" fontSize="24" fontFamily="serif" fill="hsl(var(--primary))" textAnchor="middle" dominantBaseline="middle">T</text>
+        <path d="M52 50 C 58 50, 60 52, 60 46" stroke="hsl(var(--primary))" strokeWidth="1.5" fill="none" />
+        <text x="50" y="92" fontSize="8" fontFamily="sans-serif" fill="hsl(var(--primary))" textAnchor="middle" dominantBaseline="middle" letterSpacing="1">TOP DRIVING</text>
+        <text x="50" y="100" fontSize="5" fontFamily="sans-serif" fill="hsl(var(--primary))" textAnchor="middle" dominantBaseline="middle" letterSpacing="2">SCHOOL</text>
+        </g>
     </svg>
 )
 
