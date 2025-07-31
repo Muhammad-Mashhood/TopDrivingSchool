@@ -213,14 +213,14 @@ const PricingSection = () => (
             </div>
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {pricingTiers.map((tier) => (
-                    <div key={tier.title} className="bg-gradient-to-b from-blue-500 to-blue-700 rounded-3xl p-1 group">
-                        <div className="w-full bg-slate-900/80 backdrop-blur-sm rounded-[22px] p-6 text-center flex flex-col h-full border border-slate-700/50">
-                            <h3 className="text-2xl font-bold text-white">{tier.title}</h3>
+                    <div key={tier.title} className="rounded-3xl p-1 group bg-gradient-to-br from-neutral-100/80 to-neutral-300/80 shadow-lg">
+                        <div className="w-full bg-gradient-to-b from-neutral-50/90 to-neutral-200/90 backdrop-blur-sm rounded-[22px] p-6 text-center flex flex-col h-full border border-neutral-200/50 shadow-inner shadow-white/50">
+                            <h3 className="text-2xl font-bold text-neutral-800">{tier.title}</h3>
                             <div className="my-8">
-                                <span className="text-5xl font-bold text-white">{tier.price}</span>
+                                <span className="text-5xl font-bold text-neutral-900">{tier.price}</span>
                             </div>
-                            <p className="text-slate-300 mb-8 h-12 flex-grow">{tier.description}</p>
-                            <Button asChild size="lg" className="w-full bg-blue-600 text-white hover:bg-blue-500 border-b-4 border-blue-800 hover:border-blue-700 active:border-blue-600 active:translate-y-0.5 transition-all duration-150 transform-gpu mt-auto rounded-xl">
+                            <p className="text-neutral-600 mb-8 h-12 flex-grow">{tier.description}</p>
+                            <Button asChild size="lg" className="w-full text-white bg-gradient-to-b from-neutral-700 to-black hover:from-neutral-800 border-b-4 border-black hover:border-neutral-900 active:border-neutral-800 active:translate-y-0.5 transition-all duration-150 transform-gpu mt-auto rounded-xl shadow-md">
                                <Link href="#contact">Book Now</Link>
                             </Button>
                         </div>
