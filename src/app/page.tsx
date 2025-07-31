@@ -274,30 +274,30 @@ const TestimonialsSection = () => {
                     plugins={[plugin.current]}
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
-                    className="w-full"
+                    className="w-full max-w-4xl mx-auto"
                 >
                     <CarouselContent>
                         {testimonials.map((testimonial, index) => (
                             <CarouselItem key={index}>
-                                <div className="p-1 h-full">
+                                <div className="p-1">
                                     <Card className="overflow-hidden shadow-lg bg-background">
-                                        <div className="grid md:grid-cols-2 items-center">
-                                            <div className="md:order-2 relative">
+                                        <div className="grid md:grid-cols-2 items-stretch">
+                                            <div className="relative md:order-2">
                                                 <Image 
                                                     src={testimonial.image}
                                                     alt={`Testimonial from ${testimonial.name}`}
                                                     width={800}
                                                     height={600}
-                                                    className="object-cover w-full h-full rounded-lg border-2 border-primary"
+                                                    className="object-cover w-full h-full min-h-[300px] md:min-h-0"
                                                     data-ai-hint="happy student"
                                                 />
                                             </div>
-                                            <div className="p-6 md:p-8 flex flex-col justify-center h-full">
+                                            <div className="p-6 md:p-8 flex flex-col justify-center md:order-1">
                                                 <div className="flex mb-4">
                                                     {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}
                                                 </div>
-                                                <blockquote className="text-muted-foreground italic text-lg">"{testimonial.quote}"</blockquote>
-                                                <p className="font-bold text-right mt-4">- {testimonial.name}</p>
+                                                <blockquote className="text-muted-foreground italic text-lg mb-4">"{testimonial.quote}"</blockquote>
+                                                <p className="font-bold text-right">- {testimonial.name}</p>
                                             </div>
                                         </div>
                                     </Card>
@@ -422,6 +422,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 
