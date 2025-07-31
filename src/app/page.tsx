@@ -414,7 +414,7 @@ const Footer = () => (
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-black bg-[radial-gradient(ellipse_at_top,_rgba(28,31,109,0.5)_0%,_rgba(49,10,82,0.3)_40%,_transparent_85%),_linear-gradient(to_bottom,transparent_40%,_rgba(20,40,90,0.5)_100%)]">
+    <div className="flex flex-col min-h-screen bg-black bg-[radial-gradient(ellipse_at_top,_rgba(28,31,109,0.5)_0%,_rgba(49,10,82,0.3)_40%,_transparent_85%),_radial-gradient(ellipse_at_top_right,_rgba(230,240,255,0.15)_0%,_rgba(41,98,255,0.2)_30%,_transparent_70%),_linear-gradient(to_bottom,transparent_40%,_rgba(20,40,90,0.5)_100%)]">
       <Header />
       <main className="flex-1">
         <HeroSection />
@@ -428,5 +428,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
