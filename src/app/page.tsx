@@ -281,14 +281,14 @@ const TestimonialsSection = () => {
                             <CarouselItem key={index}>
                                 <div className="p-1">
                                     <Card className="overflow-hidden shadow-lg bg-background">
-                                        <div className="grid md:grid-cols-2 items-stretch">
-                                            <div className="relative md:order-2">
+                                        <div className="grid md:grid-cols-2 items-center">
+                                            <div className="relative md:order-2 w-full aspect-square">
                                                 <Image 
                                                     src={testimonial.image}
                                                     alt={`Testimonial from ${testimonial.name}`}
-                                                    width={800}
-                                                    height={600}
-                                                    className="object-cover w-full h-full min-h-[300px] md:min-h-0"
+                                                    width={450}
+                                                    height={450}
+                                                    className="object-cover w-full h-full"
                                                     data-ai-hint="happy student"
                                                 />
                                             </div>
@@ -422,6 +422,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 
