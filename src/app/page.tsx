@@ -55,7 +55,7 @@ const Header = () => (
         <span className="font-bold sm:inline-block text-xl">Top Driving School</span>
       </Link>
       <nav className="hidden items-center justify-center gap-2 text-sm font-medium md:flex absolute left-1/2 -translate-x-1/2">
-         <div className="flex items-center gap-2 rounded-full bg-background/50 p-1 border border-border backdrop-blur-sm">
+         <div className="button-3d flex items-center gap-2 rounded-full bg-background/50 p-1 border border-border backdrop-blur-sm">
             {navLinks.map(link => (
                 <Link key={link.href} href={link.href} className="px-4 py-1.5 text-foreground/80 transition-colors hover:text-foreground rounded-full hover:bg-muted">{link.label}</Link>
             ))}
@@ -65,18 +65,18 @@ const Header = () => (
         <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex">
             <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={24} height={24} />
         </a>
-        <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex rounded-full">
+        <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex rounded-full button-3d">
           <a href="tel:+447939662421">
             <Phone className="mr-2 h-4 w-4" />
             Call Now
           </a>
         </Button>
-        <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full" asChild>
+        <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full button-3d" asChild>
           <Link href="#contact">Book Now</Link>
         </Button>
         <Sheet>
             <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="md:hidden">
+                <Button variant="outline" size="icon" className="md:hidden button-3d">
                     <Menu className="h-6 w-6" />
                     <span className="sr-only">Open navigation menu</span>
                 </Button>
@@ -108,12 +108,12 @@ const HeroSection = () => (
           Nervous students are our speciality. Professional, patient, and friendly instruction to help you pass your test with confidence.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto rounded-full">
+          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto rounded-full button-3d">
             <Link href="#services">
               Our Services <ChevronRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="w-full sm:w-auto rounded-full">
+          <Button asChild size="lg" variant="outline" className="w-full sm:w-auto rounded-full button-3d">
             <Link href="#contact">Contact Us</Link>
           </Button>
         </div>
@@ -356,7 +356,7 @@ const ContactSection = () => (
                 <Label htmlFor="message">Message</Label>
                 <Textarea id="message" placeholder="Your questions or comments..." className="flex-grow" suppressHydrationWarning />
               </div>
-              <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">Send Message</Button>
+              <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 button-3d">Send Message</Button>
             </form>
           </CardContent>
         </Card>
