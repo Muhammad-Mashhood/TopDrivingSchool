@@ -54,29 +54,29 @@ const Header = () => (
         <Logo />
         <span className="font-bold sm:inline-block text-xl">Top Driving School</span>
       </Link>
-      <nav className="hidden items-center justify-center gap-2 text-sm font-medium md:flex absolute left-1/2 -translate-x-1/2">
+      <nav className="hidden items-center justify-center gap-2 text-sm font-medium lg:flex absolute left-1/2 -translate-x-1/2">
          <div className="navbar-glass flex items-center gap-2 p-1">
             {navLinks.map(link => (
                 <Link key={link.href} href={link.href} className="px-4 py-1.5 text-foreground/80 transition-colors hover:text-foreground rounded-md hover:bg-white/10">{link.label}</Link>
             ))}
          </div>
       </nav>
-      <div className="flex flex-1 items-center justify-end space-x-4 md:ml-auto md:flex-none">
+      <div className="flex flex-1 items-center justify-end space-x-4 ml-auto">
         <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex h-9 w-9 p-0 items-center justify-center rounded-full">
             <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={32} height={32} />
         </a>
-        <Button size="sm" asChild className="hidden md:inline-flex rounded-full button-3d">
+        <Button size="sm" asChild className="hidden lg:inline-flex rounded-full button-3d">
           <a href="tel:+447939662421">
             <Phone className="mr-2 h-4 w-4" />
             Call Now
           </a>
         </Button>
-        <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full button-3d hidden md:inline-flex" asChild>
+        <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full button-3d hidden lg:inline-flex" asChild>
           <Link href="#contact">Book Now</Link>
         </Button>
         <Sheet>
             <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="md:hidden button-3d">
+                <Button size="icon" className="lg:hidden button-3d">
                     <Menu className="h-6 w-6" />
                     <span className="sr-only">Open navigation menu</span>
                 </Button>
@@ -90,13 +90,13 @@ const Header = () => (
                         <Link key={link.href} href={link.href} className="text-lg font-medium text-foreground/80 transition-colors hover:text-foreground">{link.label}</Link>
                     ))}
                     <div className="flex flex-col gap-y-4 pt-4 border-t border-border">
-                         <Button asChild className="w-full justify-start">
+                         <Button asChild className="w-full justify-center button-3d">
                           <a href="tel:+447939662421">
                             <Phone className="mr-2 h-4 w-4" />
                             Call Now
                           </a>
                         </Button>
-                        <Button asChild className="w-full justify-start">
+                        <Button asChild className="w-full justify-center button-3d bg-accent text-accent-foreground hover:bg-accent/90">
                           <Link href="#contact">
                             Book Now
                           </Link>
