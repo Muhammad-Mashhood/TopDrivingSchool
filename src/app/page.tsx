@@ -55,7 +55,7 @@ const Header = () => (
         <span className="font-bold sm:inline-block text-xl">Top Driving School</span>
       </Link>
       <nav className="hidden items-center justify-center gap-2 text-sm font-medium md:flex absolute left-1/2 -translate-x-1/2">
-         <div className="button-3d flex items-center gap-2 rounded-full bg-background/50 p-1 border border-border backdrop-blur-sm">
+         <div className="button-3d flex items-center gap-2 rounded-full bg-background/30 p-1 border border-border backdrop-blur-md">
             {navLinks.map(link => (
                 <Link key={link.href} href={link.href} className="px-4 py-1.5 text-foreground/80 transition-colors hover:text-foreground rounded-full hover:bg-muted">{link.label}</Link>
             ))}
