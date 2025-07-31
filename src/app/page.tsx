@@ -103,15 +103,15 @@ const HeroSection = () => (
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,215,0,0.2)_0%,_rgba(255,255,255,0)_40%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(128,0,128,0.3)_0%,_rgba(255,255,255,0)_50%)]"></div>
     </div>
-    <div className="container relative z-10 grid grid-cols-1 gap-8 items-center py-12 px-4 md:px-6">
-      <div className="space-y-6 text-center">
+    <div className="container relative z-10 grid md:grid-cols-2 gap-8 items-center py-12 px-4 md:px-6">
+      <div className="space-y-6 text-center md:text-left">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
           Driving School in Manchester
         </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto md:mx-0">
           Nervous students are our speciality. Professional, patient, and friendly instruction to help you pass your test with confidence.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
           <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto rounded-full">
             <Link href="#services">
               Our Services <ChevronRight className="ml-2 h-5 w-5" />
@@ -121,6 +121,16 @@ const HeroSection = () => (
             <Link href="#contact">Contact Us</Link>
           </Button>
         </div>
+      </div>
+       <div className="relative flex items-center justify-center">
+        <Image 
+          src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753990527/image-removebg-preview_yy1hmr.png"
+          alt="Modern car for driving lessons"
+          width={600}
+          height={400}
+          className="object-contain"
+          data-ai-hint="modern car"
+        />
       </div>
     </div>
   </section>
@@ -422,5 +432,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
