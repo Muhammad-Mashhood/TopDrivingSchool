@@ -368,20 +368,20 @@ const ContactSection = () => (
             </CardHeader>
             <CardContent className="space-y-4 text-muted-foreground">
               <a href="#" className="flex items-center hover:text-primary transition-colors">
-                <MapPin className="h-5 w-5 mr-3 text-accent" />
+                <MapPin className="h-5 w-5 mr-3 text-red-500" />
                 <span>Based in Altrincham, Manchester</span>
               </a>
+              <a href="mailto:aminmakki@hotmail.com" className="flex items-center hover:text-primary transition-colors">
+                <Mail className="h-5 w-5 mr-3 text-accent" />
+                <span>aminmakki@hotmail.com</span>
+              </a>
               <a href="tel:+447939662421" className="flex items-center hover:text-primary transition-colors">
-                <Phone className="h-5 w-5 mr-3 text-accent" />
+                <Phone className="h-5 w-5 mr-3 text-green-500" />
                 <span>+44 7939 662421</span>
               </a>
               <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors">
                  <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={20} height={20} className="mr-3" />
                 <span>WhatsApp</span>
-              </a>
-              <a href="mailto:aminmakki@hotmail.com" className="flex items-center hover:text-primary transition-colors">
-                <Mail className="h-5 w-5 mr-3 text-accent" />
-                <span>aminmakki@hotmail.com</span>
               </a>
             </CardContent>
           </Card>
@@ -428,5 +428,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
