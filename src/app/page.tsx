@@ -197,17 +197,17 @@ const ServicesSection = () => (
 const pricingTiers = [
     {
         title: "1 Hour Lesson",
-        price: "£30",
+        price: "£35",
         description: "Flexible and tailored to your pace (automatic car only).",
     },
     {
         title: "2 Hours Block",
-        price: "£70",
+        price: "£65",
         description: "Save on a longer, more intensive driving session.",
     },
     {
         title: "10 Hours Package",
-        price: "£350",
+        price: "£320",
         description: "Best value for a comprehensive learning experience.",
     },
 ]
