@@ -13,6 +13,7 @@ import {
   ChevronRight,
   Menu,
   CheckCircle,
+  CreditCard,
 } from 'lucide-react';
 import React from 'react';
 import Autoplay from "embla-carousel-autoplay"
@@ -29,6 +30,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/co
 
 const navLinks = [
     { href: "#services", label: "Services" },
+    { href: "#pricing", label: "Pricing" },
     { href: "#testimonials", label: "Testimonials" },
     { href: "#ai-tips", label: "Tips" },
     { href: "#contact", label: "Contact" },
@@ -201,6 +203,37 @@ const ServicesSection = () => (
     </section>
 );
 
+const PricingSection = () => (
+    <section id="pricing" className="w-full py-8">
+        <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center space-y-4 mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Pricing</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Simple, transparent pricing. Get on the road with our special offer.
+                </p>
+            </div>
+            <div className="flex justify-center">
+                <Card className="max-w-sm w-full shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+                    <CardHeader className="text-center bg-card p-6">
+                        <CardTitle className="text-2xl">Hourly Lessons</CardTitle>
+                        <CardDescription>Flexible and tailored to your pace.</CardDescription>
+                    </CardHeader>
+                    <CardContent className="p-6 text-center flex flex-col items-center justify-center">
+                         <div className="flex items-baseline justify-center mb-4">
+                            <span className="text-5xl font-bold">£30</span>
+                            <span className="text-muted-foreground">/hour</span>
+                        </div>
+                        <p className="text-muted-foreground mb-6">Our special offer price.</p>
+                        <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                           <Link href="#contact">Book Now</Link>
+                        </Button>
+                    </CardContent>
+                </Card>
+            </div>
+        </div>
+    </section>
+);
+
 const testimonials = [
   {
     name: 'Sarah L.',
@@ -230,7 +263,7 @@ const TestimonialsSection = () => {
     );
 
     return (
-        <section id="testimonials" className="w-full py-8">
+        <section id="testimonials" className="w-full py-8 bg-card">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center space-y-4 mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary">What Our Students Say</h2>
@@ -247,7 +280,7 @@ const TestimonialsSection = () => {
                         {testimonials.map((testimonial, index) => (
                             <CarouselItem key={index}>
                                 <div className="p-1 h-full">
-                                    <Card className="overflow-hidden shadow-lg bg-card">
+                                    <Card className="overflow-hidden shadow-lg bg-background">
                                         <div className="grid md:grid-cols-2 items-center">
                                             <div className="md:order-2 relative">
                                                 <Image 
@@ -380,6 +413,7 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <ServicesSection />
+        <PricingSection />
         <TestimonialsSection />
         <AiTipsSection />
         <ContactSection />
