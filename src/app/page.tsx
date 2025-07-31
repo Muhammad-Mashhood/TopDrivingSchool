@@ -111,7 +111,7 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-  <section className="container grid lg:grid-cols-2 gap-8 items-center py-8 md:py-12 px-4 md:px-6">
+  <section className="container grid lg:grid-cols-2 gap-8 items-center py-8 px-4 md:px-6">
     <div className="space-y-6 text-center lg:text-left">
       <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
         Driving Courses
@@ -168,7 +168,7 @@ const services = [
 ];
 
 const ServicesSection = () => (
-    <section id="services" className="w-full py-8 md:py-12 bg-card">
+    <section id="services" className="w-full py-8 bg-card">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
@@ -219,7 +219,7 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-    <section id="testimonials" className="w-full py-8 md:py-12">
+    <section id="testimonials" className="w-full py-8">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">What Our Students Say</h2>
@@ -232,7 +232,7 @@ const TestimonialsSection = () => (
                             <div className="p-1 h-full">
                                 <Card className="overflow-hidden shadow-lg bg-card">
                                     <div className="grid md:grid-cols-2 items-center">
-                                        <div className="md:order-2">
+                                        <div className="md:order-2 relative">
                                             <Image 
                                                 src={testimonial.image}
                                                 alt={`Testimonial from ${testimonial.name}`}
@@ -241,6 +241,10 @@ const TestimonialsSection = () => (
                                                 className="object-cover w-full h-full"
                                                 data-ai-hint="happy student"
                                             />
+                                            <div className="absolute inset-0 flex items-center justify-between p-4">
+                                                <CarouselPrevious className="static translate-x-0 translate-y-0" />
+                                                <CarouselNext className="static translate-x-0 translate-y-0" />
+                                            </div>
                                         </div>
                                         <div className="p-6 md:p-8 flex flex-col justify-center h-full">
                                             <div className="flex mb-4">
@@ -255,15 +259,13 @@ const TestimonialsSection = () => (
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className="hidden sm:flex" />
-                <CarouselNext className="hidden sm:flex" />
             </Carousel>
         </div>
     </section>
 );
 
 const AiTipsSection = () => (
-  <section id="ai-tips" className="py-8 md:py-12 bg-card">
+  <section id="ai-tips" className="py-8 bg-card">
     <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center text-primary">
@@ -280,7 +282,7 @@ const AiTipsSection = () => (
 );
 
 const ContactSection = () => (
-  <section id="contact" className="py-8 md:py-12">
+  <section id="contact" className="py-8">
     <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-primary">Get In Touch</h2>
