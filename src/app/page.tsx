@@ -113,7 +113,7 @@ const HeroSection = () => (
   <section className="container grid lg:grid-cols-2 gap-8 items-center py-12 px-4 md:px-6 md:min-h-[calc(100vh-4rem)]">
     <div className="space-y-6 text-center lg:text-left">
       <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
-        Driving Courses
+        Driving School in Manchester
       </h1>
       <p className="text-lg text-muted-foreground">
         Nervous students are our speciality. Professional, patient, and friendly instruction to help you pass your test with confidence.
