@@ -322,7 +322,7 @@ const AiTipsSection = () => (
           AI Driving Assistant
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Get real-time, AI-powered driving tips based on current traffic, weather, and road conditions in Altrincham.
+          Get real-time, AI-powered driving tips based on current traffic, weather, and road conditions in Altrincham, Manchester.
         </p>
       </div>
       <DrivingTipsForm />
@@ -368,11 +368,11 @@ const ContactSection = () => (
             </CardHeader>
             <CardContent className="space-y-4 text-muted-foreground">
               <a href="#" className="flex items-center hover:text-primary transition-colors">
-                <MapPin className="h-5 w-5 mr-3 text-foreground" />
-                <span>Based in Altrincham</span>
+                <MapPin className="h-5 w-5 mr-3 text-red-500" />
+                <span>Based in Altrincham, Manchester</span>
               </a>
               <a href="tel:+447939662421" className="flex items-center hover:text-primary transition-colors">
-                <Phone className="h-5 w-5 mr-3 text-foreground" />
+                <Phone className="h-5 w-5 mr-3 text-green-500" />
                 <span>+44 7939 662421</span>
               </a>
               <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors">
@@ -380,7 +380,7 @@ const ContactSection = () => (
                 <span>WhatsApp</span>
               </a>
               <a href="mailto:aminmakki@hotmail.com" className="flex items-center hover:text-primary transition-colors">
-                <Mail className="h-5 w-5 mr-3 text-foreground" />
+                <Mail className="h-5 w-5 mr-3 text-blue-500" />
                 <span>aminmakki@hotmail.com</span>
               </a>
             </CardContent>

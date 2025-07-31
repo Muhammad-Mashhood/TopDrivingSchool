@@ -34,7 +34,7 @@ export function DrivingTipsForm() {
       <Card className="shadow-lg bg-card flex flex-col border-0">
         <CardHeader>
           <CardTitle>Driving Conditions Input</CardTitle>
-          <CardDescription>Enter current Altrincham driving conditions to get tailored tips.</CardDescription>
+          <CardDescription>Enter current Altrincham, Manchester driving conditions to get tailored tips.</CardDescription>
         </CardHeader>
         <CardContent className="flex-grow flex flex-col">
           <form action={formAction} className="space-y-4 flex flex-col flex-grow">
@@ -73,7 +73,7 @@ export function DrivingTipsForm() {
       <Card className="flex flex-col shadow-lg bg-card border-0">
         <CardHeader>
           <CardTitle>Your AI-Powered Driving Tips</CardTitle>
-          <CardDescription>Here are your personalized tips for driving safely in Altrincham today.</CardDescription>
+          <CardDescription>Here are your personalized tips for driving safely in Altrincham, Manchester today.</CardDescription>
         </CardHeader>
         <CardContent className="flex-grow flex">
           {state.tips && state.tips.length > 0 ? (
