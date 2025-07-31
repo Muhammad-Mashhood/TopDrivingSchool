@@ -203,7 +203,7 @@ const pricingTiers = [
 ]
 
 const PricingSection = () => (
-    <section id="pricing" className="relative w-full py-16 flex flex-col justify-center overflow-hidden">
+    <section id="pricing" className="relative w-full py-16 flex flex-col justify-center">
         <div className="container relative mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Pricing</h2>
@@ -229,8 +229,7 @@ const PricingSection = () => (
                 ))}
             </div>
         </div>
-         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent -mb-1 z-10" />
-
+         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-transparent to-black pointer-events-none -mb-1 z-10" />
     </section>
 );
 
