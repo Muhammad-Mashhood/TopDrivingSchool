@@ -221,7 +221,7 @@ const PricingSection = () => (
                                 <span className="text-5xl font-bold text-neutral-50">{tier.price}</span>
                             </div>
                             <p className="text-neutral-300 mb-6 flex-grow">{tier.description}</p>
-                             <Link href="#contact" className="button-3d mt-auto w-full text-base font-semibold text-center no-underline text-white">
+                             <Link href="#contact" className="button-3d mt-auto w-full text-base font-semibold text-center no-underline text-white rounded-xl p-3">
                                 Book Now
                             </Link>
                         </div>
@@ -229,7 +229,7 @@ const PricingSection = () => (
                 ))}
             </div>
         </div>
-         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none -mb-1 z-10" />
+         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </section>
 );
 
