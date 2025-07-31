@@ -352,6 +352,10 @@ const ContactSection = () => (
                 <Label htmlFor="email">Email</Label>
                 <Input id="email" type="email" placeholder="your@email.com" suppressHydrationWarning />
               </div>
+              <div className="space-y-2">
+                <Label htmlFor="phone">Phone Number</Label>
+                <Input id="phone" type="tel" placeholder="Your Phone Number" suppressHydrationWarning />
+              </div>
               <div className="space-y-2 flex-grow flex flex-col">
                 <Label htmlFor="message">Message</Label>
                 <Textarea id="message" placeholder="Your questions or comments..." className="flex-grow" suppressHydrationWarning />
