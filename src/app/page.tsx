@@ -99,7 +99,6 @@ const Header = () => (
 
 const HeroSection = () => (
   <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
-    <div className="absolute inset-0 top-0 h-full w-full bg-[radial-gradient(ellipse_at_top_right,_rgba(20,20,80,0.5)_0%,_rgba(49,10,82,0.3)_30%,_rgba(0,0,0,1)_80%)]"></div>
     <div className="container relative z-10 grid md:grid-cols-2 gap-8 items-center py-12 px-4 md:px-6">
       <div className="space-y-6 text-center md:text-left">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
@@ -159,7 +158,6 @@ const services = [
 
 const ServicesSection = () => (
     <section id="services" className="relative w-full py-16 flex flex-col justify-center overflow-hidden">
-        <div className="absolute inset-0 top-0 h-full w-full bg-gradient-to-b from-transparent via-blue-900/20 to-transparent"></div>
         <div className="container relative mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
@@ -206,7 +204,6 @@ const pricingTiers = [
 
 const PricingSection = () => (
     <section id="pricing" className="relative w-full py-16 flex flex-col justify-center overflow-hidden">
-        <div className="absolute inset-0 top-0 h-full w-full bg-gradient-to-t from-transparent via-purple-900/20 to-transparent"></div>
         <div className="container relative mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Pricing</h2>
@@ -269,7 +266,7 @@ const TestimonialsSection = () => {
     );
 
     return (
-        <section id="testimonials" className="relative w-full py-8 overflow-hidden bg-gradient-to-t from-purple-900/40 via-transparent to-transparent">
+        <section id="testimonials" className="relative w-full py-8 overflow-hidden">
             <div className="container relative mx-auto px-4 md:px-6">
                 <div className="text-center space-y-4 mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary">What Our Students Say</h2>
@@ -317,7 +314,7 @@ const TestimonialsSection = () => {
 };
 
 const AiTipsSection = () => (
-  <section id="ai-tips" className="relative py-8 overflow-hidden bg-gradient-to-b from-purple-900/40 via-transparent to-transparent">
+  <section id="ai-tips" className="relative py-8 overflow-hidden">
     <div className="container relative px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center text-primary">
@@ -334,7 +331,7 @@ const AiTipsSection = () => (
 );
 
 const ContactSection = () => (
-  <section id="contact" className="relative py-8 overflow-hidden bg-gradient-to-t from-purple-900/40 via-transparent to-transparent">
+  <section id="contact" className="relative py-8 overflow-hidden">
     <div className="container relative px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-primary">Get In Touch</h2>
@@ -417,7 +414,7 @@ const Footer = () => (
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-black bg-[radial-gradient(ellipse_at_top,_rgba(28,31,109,0.7)_0%,_rgba(49,10,82,0.4)_40%,_rgba(0,0,0,1)_85%)]">
+    <div className="flex flex-col min-h-screen bg-black bg-[radial-gradient(ellipse_at_top,_rgba(28,31,109,0.5)_0%,_rgba(49,10,82,0.3)_40%,_transparent_85%)]">
       <Header />
       <main className="flex-1">
         <HeroSection />
