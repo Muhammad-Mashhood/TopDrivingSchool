@@ -161,8 +161,12 @@ const services = [
 ];
 
 const ServicesSection = () => (
-    <section id="services" className="w-full py-16 bg-card flex flex-col justify-center">
-        <div className="container mx-auto px-4 md:px-6">
+    <section id="services" className="relative w-full py-16 flex flex-col justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-tr from-gray-900 via-black to-purple-900">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,215,0,0.15)_0%,_rgba(255,255,255,0)_40%)]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(255,255,255,0.1)_0%,_rgba(255,255,255,0)_40%)]"></div>
+        </div>
+        <div className="container relative mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -207,8 +211,12 @@ const pricingTiers = [
 ]
 
 const PricingSection = () => (
-    <section id="pricing" className="w-full py-16 flex flex-col justify-center">
-        <div className="container mx-auto px-4 md:px-6">
+    <section id="pricing" className="relative w-full py-16 flex flex-col justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-bl from-black via-gray-900 to-purple-900">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,215,0,0.2)_0%,_rgba(255,255,255,0)_30%)]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.1)_0%,_rgba(255,255,255,0)_50%)]"></div>
+        </div>
+        <div className="container relative mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Pricing</h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -217,7 +225,7 @@ const PricingSection = () => (
             </div>
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {pricingTiers.map((tier) => (
-                    <Card key={tier.title} className="w-full transition-all duration-300 bg-card hover:shadow-primary/20 shadow-lg hover:-translate-y-1 flex flex-col border-primary/20">
+                    <Card key={tier.title} className="w-full transition-all duration-300 bg-card/80 backdrop-blur-sm hover:shadow-primary/20 shadow-lg hover:-translate-y-1 flex flex-col border-primary/20">
                         <CardHeader className="text-center p-6">
                             <CardTitle className="text-2xl">{tier.title}</CardTitle>
                         </CardHeader>
@@ -270,8 +278,11 @@ const TestimonialsSection = () => {
     );
 
     return (
-        <section id="testimonials" className="w-full py-8 bg-card">
-            <div className="container mx-auto px-4 md:px-6">
+        <section id="testimonials" className="relative w-full py-8 overflow-hidden">
+             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-purple-900 to-black">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,215,0,0.1)_0%,_rgba(255,255,255,0)_50%)]"></div>
+            </div>
+            <div className="container relative mx-auto px-4 md:px-6">
                 <div className="text-center space-y-4 mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary">What Our Students Say</h2>
                     <p className="text-lg text-muted-foreground">We're proud to have helped so many people become confident drivers.</p>
@@ -287,7 +298,7 @@ const TestimonialsSection = () => {
                         {testimonials.map((testimonial, index) => (
                             <CarouselItem key={index} className="md:basis-1/1">
                                 <div className="p-1 h-full">
-                                    <Card className="overflow-hidden shadow-lg bg-background border-0">
+                                    <Card className="overflow-hidden shadow-lg bg-background/70 backdrop-blur-sm border-0">
                                         <div className="grid md:grid-cols-2 items-center">
                                             <div className="relative md:order-2 w-full h-[400px]">
                                                 <Image 
@@ -318,8 +329,11 @@ const TestimonialsSection = () => {
 };
 
 const AiTipsSection = () => (
-  <section id="ai-tips" className="py-8 bg-background">
-    <div className="container px-4 md:px-6">
+  <section id="ai-tips" className="relative py-8 overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-r from-purple-900 via-black to-gray-900">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,215,0,0.15)_0%,_rgba(255,255,255,0)_40%)]"></div>
+    </div>
+    <div className="container relative px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center text-primary">
           <Sparkles className="h-8 w-8 mr-4 text-accent" />
@@ -335,14 +349,17 @@ const AiTipsSection = () => (
 );
 
 const ContactSection = () => (
-  <section id="contact" className="py-8 bg-card">
-    <div className="container px-4 md:px-6">
+  <section id="contact" className="relative py-8 overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-l from-gray-900 via-black to-purple-900">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(255,215,0,0.1)_0%,_rgba(255,255,255,0)_40%)]"></div>
+    </div>
+    <div className="container relative px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-primary">Get In Touch</h2>
         <p className="text-lg text-muted-foreground">Have questions? Want to book a lesson? Reach out to us!</p>
       </div>
       <div className="grid md:grid-cols-2 gap-12 items-stretch">
-        <Card className="shadow-lg bg-background flex flex-col border-0">
+        <Card className="shadow-lg bg-background/70 backdrop-blur-sm flex flex-col border-0">
           <CardHeader>
             <CardTitle>Request Information</CardTitle>
             <CardDescription>Fill out the form and we'll get back to you as soon as possible.</CardDescription>
@@ -366,7 +383,7 @@ const ContactSection = () => (
           </CardContent>
         </Card>
         <div className="space-y-8">
-          <Card className="shadow-lg bg-background border-0">
+          <Card className="shadow-lg bg-background/70 backdrop-blur-sm border-0">
             <CardHeader>
               <CardTitle>Contact Details</CardTitle>
             </CardHeader>
@@ -408,8 +425,9 @@ const ContactSection = () => (
 );
 
 const Footer = () => (
-  <footer className="bg-background">
-    <div className="container py-6 text-center text-muted-foreground px-4 md:px-6">
+  <footer className="relative bg-black overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-t from-black via-gray-900 to-purple-900 opacity-50"></div>
+    <div className="container relative py-6 text-center text-muted-foreground px-4 md:px-6">
       <p>&copy; {new Date().getFullYear()} Top Driving School. All rights reserved.</p>
     </div>
   </footer>
@@ -432,7 +450,5 @@ export default function Home() {
     </div>
   );
 }
-
-    
 
     

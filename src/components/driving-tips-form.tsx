@@ -31,7 +31,7 @@ export function DrivingTipsForm() {
 
   return (
     <div className="grid gap-8 md:grid-cols-2 items-stretch">
-      <Card className="shadow-lg bg-card flex flex-col border-0">
+      <Card className="shadow-lg bg-card/70 backdrop-blur-sm flex flex-col border-0">
         <CardHeader>
           <CardTitle>Driving Conditions Input</CardTitle>
           <CardDescription>Enter current Altrincham, Manchester driving conditions to get tailored tips.</CardDescription>
@@ -70,7 +70,7 @@ export function DrivingTipsForm() {
         </CardContent>
       </Card>
 
-      <Card className="flex flex-col shadow-lg bg-card border-0">
+      <Card className="flex flex-col shadow-lg bg-card/70 backdrop-blur-sm border-0">
         <CardHeader>
           <CardTitle>Your AI-Powered Driving Tips</CardTitle>
           <CardDescription>Here are your personalized tips for driving safely in Altrincham, Manchester today.</CardDescription>
@@ -97,3 +97,5 @@ export function DrivingTipsForm() {
     </div>
   );
 }
+
+    
