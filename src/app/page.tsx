@@ -216,7 +216,7 @@ const PricingSection = () => (
                 <Card className="max-w-sm w-full shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
                     <CardHeader className="text-center bg-card p-6">
                         <CardTitle className="text-2xl">Hourly Lessons</CardTitle>
-                        <CardDescription>Flexible and tailored to your pace.</CardDescription>
+                        <CardDescription>Flexible and tailored to your pace (automatic car only).</CardDescription>
                     </CardHeader>
                     <CardContent className="p-6 text-center flex flex-col items-center justify-center">
                          <div className="flex items-baseline justify-center mb-4">
