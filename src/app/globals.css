@@ -87,16 +87,16 @@
   .card-3d {
     @apply relative bg-neutral-800 rounded-2xl p-6 flex flex-col items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:transform hover:-translate-y-2;
     box-shadow: 
-      0 12px 24px rgba(0, 0, 0, 0.2), /* Floating shadow */
-      inset 0 2px 4px rgba(255, 255, 255, 0.1), /* Top-left highlight */
-      inset 0 -2px 4px rgba(0, 0, 0, 0.2), /* Bottom shadow */
-      inset 2px 0 4px rgba(255, 255, 255, 0.1), /* Left highlight */
-      inset -2px 0 4px rgba(0, 0, 0, 0.2); /* Right shadow */
+      0 20px 40px rgba(0, 0, 0, 0.3), /* Deeper floating shadow */
+      inset 0 4px 6px rgba(255, 255, 255, 0.15), /* Brighter top-left highlight */
+      inset 0 -4px 6px rgba(0, 0, 0, 0.3), /* Deeper bottom shadow */
+      inset 4px 0 6px rgba(255, 255, 255, 0.15), /* Brighter left highlight */
+      inset -4px 0 6px rgba(0, 0, 0, 0.3); /* Deeper right shadow */
   }
   .card-3d::before {
     content: "";
     @apply absolute top-0 left-0 w-full h-1/2;
-    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.15), transparent 50%);
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.2), transparent 60%);
     pointer-events: none;
   }
 }
