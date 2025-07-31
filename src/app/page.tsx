@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -12,6 +14,9 @@ import {
   Menu,
   CheckCircle,
 } from 'lucide-react';
+import React from 'react';
+import Autoplay from "embla-carousel-autoplay"
+
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -48,7 +53,6 @@ const Logo = () => (
       viewBox="0 0 100 100"
       className="h-12 w-12 text-primary fill-current"
     >
-      
         <path d="M50 15 C 40 20, 20 25, 20 50 C 20 75, 40 80, 50 85 C 60 80, 80 75, 80 50 C 80 25, 60 20, 50 15 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
         <path d="M40 18 Q 50 10, 60 18 L 55 25 L 50 20 L 45 25 Z" />
         <path d="M40 35 L 60 35 M 50 35 L 50 65 Q 45 70, 40 65" fill="none" stroke="currentColor" strokeWidth="4" />
@@ -58,7 +62,6 @@ const Logo = () => (
         <path d="M80 50 C 75 40, 70 30, 60 25" fill="none" stroke="currentColor" strokeWidth="2"/>
         <path d="M80 50 C 85 60, 75 75, 65 80" fill="none" stroke="currentColor" strokeWidth="2"/>
         <path d="M70 40 C 80 45, 85 55, 80 65" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-      
     </svg>
 )
 
@@ -218,51 +221,59 @@ const testimonials = [
   },
 ];
 
-const TestimonialsSection = () => (
-    <section id="testimonials" className="w-full py-8">
-        <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center space-y-4 mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-primary">What Our Students Say</h2>
-                <p className="text-lg text-muted-foreground">We're proud to have helped so many people become confident drivers.</p>
+const TestimonialsSection = () => {
+    const plugin = React.useRef(
+        Autoplay({ delay: 3000, stopOnInteraction: true })
+    );
+
+    return (
+        <section id="testimonials" className="w-full py-8">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="text-center space-y-4 mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-primary">What Our Students Say</h2>
+                    <p className="text-lg text-muted-foreground">We're proud to have helped so many people become confident drivers.</p>
+                </div>
+                <Carousel 
+                    opts={{ align: "start", loop: true }} 
+                    plugins={[plugin.current]}
+                    onMouseEnter={plugin.current.stop}
+                    onMouseLeave={plugin.current.reset}
+                    className="w-full"
+                >
+                    <CarouselContent>
+                        {testimonials.map((testimonial, index) => (
+                            <CarouselItem key={index}>
+                                <div className="p-1 h-full">
+                                    <Card className="overflow-hidden shadow-lg bg-card">
+                                        <div className="grid md:grid-cols-2 items-center">
+                                            <div className="md:order-2 relative">
+                                                <Image 
+                                                    src={testimonial.image}
+                                                    alt={`Testimonial from ${testimonial.name}`}
+                                                    width={800}
+                                                    height={600}
+                                                    className="object-cover w-full h-full rounded-lg border-2 border-primary"
+                                                    data-ai-hint="happy student"
+                                                />
+                                            </div>
+                                            <div className="p-6 md:p-8 flex flex-col justify-center h-full">
+                                                <div className="flex mb-4">
+                                                    {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}
+                                                </div>
+                                                <blockquote className="text-muted-foreground italic text-lg">"{testimonial.quote}"</blockquote>
+                                                <p className="font-bold text-right mt-4">- {testimonial.name}</p>
+                                            </div>
+                                        </div>
+                                    </Card>
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                </Carousel>
             </div>
-            <Carousel opts={{ align: "start", loop: true }} className="w-full">
-                <CarouselContent>
-                    {testimonials.map((testimonial, index) => (
-                        <CarouselItem key={index}>
-                            <div className="p-1 h-full">
-                                <Card className="overflow-hidden shadow-lg bg-card">
-                                    <div className="grid md:grid-cols-2 items-center">
-                                        <div className="md:order-2 relative">
-                                            <Image 
-                                                src={testimonial.image}
-                                                alt={`Testimonial from ${testimonial.name}`}
-                                                width={800}
-                                                height={600}
-                                                className="object-cover w-full h-full"
-                                                data-ai-hint="happy student"
-                                            />
-                                            <div className="absolute inset-0 flex items-center justify-between p-4">
-                                                <CarouselPrevious className="static translate-x-0 translate-y-0" />
-                                                <CarouselNext className="static translate-x-0 translate-y-0" />
-                                            </div>
-                                        </div>
-                                        <div className="p-6 md:p-8 flex flex-col justify-center h-full">
-                                            <div className="flex mb-4">
-                                                {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}
-                                            </div>
-                                            <blockquote className="text-muted-foreground italic text-lg">"{testimonial.quote}"</blockquote>
-                                            <p className="font-bold text-right mt-4">- {testimonial.name}</p>
-                                        </div>
-                                    </div>
-                                </Card>
-                            </div>
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-            </Carousel>
-        </div>
-    </section>
-);
+        </section>
+    )
+};
 
 const AiTipsSection = () => (
   <section id="ai-tips" className="py-8 bg-card">
@@ -374,5 +385,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
