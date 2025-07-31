@@ -137,7 +137,7 @@ const HeroSection = () => (
         width={1200}
         height={800}
         className="rounded-xl shadow-2xl"
-        data-ai-hint="driving test"
+        data-ai-hint="driving lesson"
       />
     </div>
   </section>
