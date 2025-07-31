@@ -378,15 +378,15 @@ const ContactSection = () => (
             </CardContent>
           </Card>
            <div className="rounded-lg shadow-lg w-full h-[300px] overflow-hidden">
-                <a href="https://maps.app.goo.gl/cf6myQXrGqGVuaBVA" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
-                    <Image
-                        src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753983292/b59c28a8-6559-4726-adc3-8e50d87ed3d8.png"
-                        alt="Map pointing to Top Driving School"
-                        width={800}
-                        height={600}
-                        className="w-full h-full object-cover"
-                    />
-                </a>
+             <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2377.773533639415!2d-2.35515092282283!3d53.38520097229762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bae5683c35b87%3A0x524bca5a17277189!2sTop%20Driving%20School%20Manchester!5e0!3m2!1sen!2suk!4v1700000000000"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
         </div>
       </div>
