@@ -391,7 +391,7 @@ const ContactSection = () => (
 );
 
 const Footer = () => (
-  <footer className="bg-card border-t">
+  <footer className="bg-background border-t">
     <div className="container py-6 text-center text-muted-foreground px-4 md:px-6">
       <p>&copy; {new Date().getFullYear()} Top Driving School. All rights reserved.</p>
     </div>
