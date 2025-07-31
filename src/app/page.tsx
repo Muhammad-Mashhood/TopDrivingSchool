@@ -305,7 +305,7 @@ const TestimonialsSection = () => {
 };
 
 const AiTipsSection = () => (
-  <section id="ai-tips" className="py-8 bg-card">
+  <section id="ai-tips" className="py-8 bg-background">
     <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center text-primary">
@@ -322,14 +322,14 @@ const AiTipsSection = () => (
 );
 
 const ContactSection = () => (
-  <section id="contact" className="py-8">
+  <section id="contact" className="py-8 bg-card">
     <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-primary">Get In Touch</h2>
         <p className="text-lg text-muted-foreground">Have questions? Want to book a lesson? Reach out to us!</p>
       </div>
       <div className="grid md:grid-cols-2 gap-12 items-stretch">
-        <Card className="shadow-lg bg-card flex flex-col">
+        <Card className="shadow-lg bg-background flex flex-col">
           <CardHeader>
             <CardTitle>Request Information</CardTitle>
             <CardDescription>Fill out the form and we'll get back to you as soon as possible.</CardDescription>
@@ -353,7 +353,7 @@ const ContactSection = () => (
           </CardContent>
         </Card>
         <div className="space-y-8">
-          <Card className="shadow-lg bg-card">
+          <Card className="shadow-lg bg-background">
             <CardHeader>
               <CardTitle>Contact Details</CardTitle>
             </CardHeader>
