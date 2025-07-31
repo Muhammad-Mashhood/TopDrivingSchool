@@ -65,13 +65,13 @@ const Header = () => (
         <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex">
             <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={24} height={24} />
         </a>
-        <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex">
+        <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex rounded-full">
           <a href="tel:+447939662421">
             <Phone className="mr-2 h-4 w-4" />
             Call Now
           </a>
         </Button>
-        <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+        <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full" asChild>
           <Link href="#contact">Book Now</Link>
         </Button>
         <Sheet>
