@@ -121,11 +121,11 @@ const HeroSection = () => (
       </div>
        <div className="relative flex items-center justify-center">
         <Image 
-          src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753990527/image-removebg-preview_yy1hmr.png"
+          src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753991686/craiyon_005443_image_w7bg5n.png"
           alt="Modern car for driving lessons"
           width={600}
           height={400}
-          className="object-contain"
+          className="object-contain drop-shadow-lg"
           data-ai-hint="modern car"
         />
       </div>
