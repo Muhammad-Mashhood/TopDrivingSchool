@@ -52,7 +52,7 @@ const Header = () => (
     <div className="container flex h-20 items-center px-4 md:px-6">
       <Link href="#" className="mr-auto flex items-center space-x-2">
         <Logo />
-        <span className="font-bold sm:inline-block text-xl">Top Driving School</span>
+        <span className="font-bold hidden sm:inline-block text-xl">Top Driving School</span>
       </Link>
       <nav className="hidden items-center justify-center gap-2 text-sm font-medium lg:flex absolute left-1/2 -translate-x-1/2">
          <div className="navbar-glass flex items-center gap-2 p-1">
@@ -62,7 +62,7 @@ const Header = () => (
          </div>
       </nav>
       <div className="flex flex-1 items-center justify-end space-x-4 ml-auto">
-        <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex h-9 w-9 p-0 items-center justify-center rounded-full">
+        <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex h-9 w-9 p-0 items-center justify-center rounded-full lg:inline-flex">
             <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={32} height={32} />
         </a>
         <Button size="sm" asChild className="hidden lg:inline-flex rounded-full button-3d">
@@ -448,5 +448,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
