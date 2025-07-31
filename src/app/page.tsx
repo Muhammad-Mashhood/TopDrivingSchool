@@ -38,19 +38,6 @@ const navLinks = [
     { href: "#contact", label: "Contact" },
 ];
 
-const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 48 48"
-        fill="currentColor"
-        {...props}
-    >
-        <path
-            d="M38.6 34.4q-1.4-2.1-2-2.3-1-.3-1.4.3t-.7 1q-.3.7-.5.9t-.5.3q-.6 0-1.7-.4t-3.2-1.9q-2.3-1.6-4.2-4.1t-2.6-4.3q-.4-1.2-.4-1.7 0-.7.3-1.2t.8-.9q.4-.4.5-.7t.1-1q0-.7-.2-1.2t-.5-1-.6-.8-1.1-.6q-.7-.2-1.1-.2a3.8 3.8 0 0 0-2.8 1.3 5.4 5.4 0 0 0-1.8 4.2q0 1.4.3 2.5t1 2.3 1.4 2.4 2 2.6 2.6 2.6 3.1 2.4 3.6 1.9 4 .9h.5q1.2 0 2.2-.6t1.5-1.8q.3-1 .2-1.9-.3-1.3-1-1.9zM24 4C13 4 4 13 4 24t9 20 20 9 20-9 9-20-9-20-20-9z"
-        />
-    </svg>
-)
-
 const Logo = () => (
     <Image 
         src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753976947/Top_Driving_School_transparent_Logo_1_ys7cep.png"
@@ -62,16 +49,18 @@ const Logo = () => (
 )
 
 const Header = () => (
-  <header className="z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-    <div className="container flex h-16 max-w-screen-2xl items-center px-4 md:px-6">
+  <header className="absolute top-0 z-50 w-full">
+    <div className="container flex h-20 items-center px-4 md:px-6">
       <Link href="#" className="mr-auto flex items-center space-x-2">
         <Logo />
         <span className="font-bold sm:inline-block text-xl">Top Driving School</span>
       </Link>
-      <nav className="hidden items-center justify-center gap-2 text-sm font-medium md:flex">
-         {navLinks.map(link => (
-            <Link key={link.href} href={link.href} className="px-4 text-foreground/80 transition-colors hover:text-foreground">{link.label}</Link>
-        ))}
+      <nav className="hidden items-center justify-center gap-2 text-sm font-medium md:flex absolute left-1/2 -translate-x-1/2">
+         <div className="flex items-center gap-2 rounded-full bg-background/50 p-1 border border-border backdrop-blur-sm">
+            {navLinks.map(link => (
+                <Link key={link.href} href={link.href} className="px-4 py-1.5 text-foreground/80 transition-colors hover:text-foreground rounded-full hover:bg-muted">{link.label}</Link>
+            ))}
+         </div>
       </nav>
       <div className="flex flex-1 items-center justify-end space-x-4 md:ml-auto md:flex-none">
         <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex">
@@ -110,23 +99,29 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-  <section className="container grid grid-cols-1 gap-8 items-center py-12 px-4 md:px-6 md:min-h-[calc(100vh-4rem)]">
-    <div className="space-y-6 text-center">
-      <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
-        Driving School in Manchester
-      </h1>
-      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-        Nervous students are our speciality. Professional, patient, and friendly instruction to help you pass your test with confidence.
-      </p>
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto">
-          <Link href="#services">
-            Our Services <ChevronRight className="ml-2 h-5 w-5" />
-          </Link>
-        </Button>
-        <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
-          <Link href="#contact">Contact Us</Link>
-        </Button>
+  <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+     <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-gray-900 to-black">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,215,0,0.2)_0%,_rgba(255,255,255,0)_40%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(128,0,128,0.3)_0%,_rgba(255,255,255,0)_50%)]"></div>
+    </div>
+    <div className="container relative z-10 grid grid-cols-1 gap-8 items-center py-12 px-4 md:px-6">
+      <div className="space-y-6 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
+          Driving School in Manchester
+        </h1>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Nervous students are our speciality. Professional, patient, and friendly instruction to help you pass your test with confidence.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto">
+            <Link href="#services">
+              Our Services <ChevronRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+            <Link href="#contact">Contact Us</Link>
+          </Button>
+        </div>
       </div>
     </div>
   </section>
