@@ -167,7 +167,7 @@ const services = [
 ];
 
 const ServicesSection = () => (
-    <section id="services" className="w-full py-16 bg-card md:min-h-screen flex flex-col justify-center">
+    <section id="services" className="w-full py-16 bg-card flex flex-col justify-center">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
@@ -195,7 +195,7 @@ const ServicesSection = () => (
 );
 
 const PricingSection = () => (
-    <section id="pricing" className="w-full py-16 md:min-h-screen flex flex-col justify-center">
+    <section id="pricing" className="w-full py-16 flex flex-col justify-center">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Pricing</h2>
@@ -368,7 +368,7 @@ const ContactSection = () => (
                 <span>+44 7939 662421</span>
               </a>
               <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors">
-                <WhatsAppIcon className="h-5 w-5 mr-3 text-primary" />
+                 <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={20} height={20} className="mr-3" />
                 <span>WhatsApp</span>
               </a>
               <a href="mailto:contact@topdrivingschool.co.uk" className="flex items-center hover:text-primary transition-colors">
