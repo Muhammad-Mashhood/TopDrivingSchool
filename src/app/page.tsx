@@ -167,7 +167,7 @@ const ServicesSection = () => (
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {services.map((service) => (
-                    <Card key={service.title} className="bg-background/50 text-center flex flex-col items-center p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-0">
+                    <Card key={service.title} className="bg-transparent text-center flex flex-col items-center p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-0">
                         <div className="bg-secondary p-4 rounded-full mb-4">
                             <service.icon className="h-8 w-8 text-accent" />
                         </div>
@@ -368,11 +368,11 @@ const ContactSection = () => (
             </CardHeader>
             <CardContent className="space-y-4 text-muted-foreground">
               <a href="#" className="flex items-center hover:text-primary transition-colors">
-                <MapPin className="h-5 w-5 mr-3 text-red-500" />
+                <MapPin className="h-5 w-5 mr-3 text-accent" />
                 <span>Based in Altrincham, Manchester</span>
               </a>
               <a href="tel:+447939662421" className="flex items-center hover:text-primary transition-colors">
-                <Phone className="h-5 w-5 mr-3 text-green-500" />
+                <Phone className="h-5 w-5 mr-3 text-accent" />
                 <span>+44 7939 662421</span>
               </a>
               <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors">
@@ -380,7 +380,7 @@ const ContactSection = () => (
                 <span>WhatsApp</span>
               </a>
               <a href="mailto:aminmakki@hotmail.com" className="flex items-center hover:text-primary transition-colors">
-                <Mail className="h-5 w-5 mr-3 text-blue-500" />
+                <Mail className="h-5 w-5 mr-3 text-accent" />
                 <span>aminmakki@hotmail.com</span>
               </a>
             </CardContent>
@@ -414,7 +414,7 @@ const Footer = () => (
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-black bg-[radial-gradient(ellipse_at_top,_rgba(28,31,109,0.5)_0%,_rgba(49,10,82,0.3)_40%,_transparent_85%)]">
+    <div className="flex flex-col min-h-screen bg-black bg-[radial-gradient(ellipse_at_top,_rgba(28,31,109,0.5)_0%,_rgba(49,10,82,0.3)_40%,_transparent_85%),_linear-gradient(to_bottom,transparent_40%,_rgba(20,40,90,0.5)_100%)]">
       <Header />
       <main className="flex-1">
         <HeroSection />
