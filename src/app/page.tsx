@@ -29,6 +29,17 @@ const navLinks = [
     { href: "#contact", label: "Contact" },
 ];
 
+const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      {...props}
+    >
+        <path d="M16.6 14c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.7-.8.9-.1.1-.3.2-.5.1-.3-.1-.9-.4-1.8-1.1-.7-.6-1.2-1.3-1.3-1.5-.1-.2 0-.4.1-.5.1-.1.2-.2.4-.4.1-.1.2-.2.2-.4.1-.1 0-.3-.1-.4-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.5-.4h-.4c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2 1 2.3c.1.1 1.5.7 3.5 2.5 2 1.8 2 1.2 2.4 1.2.3 0 .9-.1 1.1-.2.4-.2.9-1.2.9-2.2.1-1-.1-1.6-.2-1.7s-.4-.2-.6-.3zm3.5-7.4c-2.4-2.4-6.4-2.4-8.8 0-2.4 2.4-2.4 6.4 0 8.8 2.4 2.4 6.4 2.4 8.8 0 2.5-2.4 2.5-6.4-.1-8.8zm-8.8 11.3c-2.6 0-5.3-2.6-5.3-6.1s2.6-6.1 5.3-6.1c1.3 0 2.6.5 3.5 1.5 1 1 1.5 2.2 1.5 3.5 0 3.5-2.6 6.1-5.1 6.1z"/>
+    </svg>
+)
+
 const Logo = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -61,11 +72,17 @@ const Header = () => (
             <Link key={link.href} href={link.href} className="px-4 text-foreground/80 transition-colors hover:text-foreground">{link.label}</Link>
         ))}
       </nav>
-      <div className="flex flex-1 items-center justify-end space-x-4 md:ml-auto md:flex-none">
+      <div className="flex flex-1 items-center justify-end space-x-2 md:ml-auto md:flex-none">
         <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex">
-          <a href="tel:07939662421">
+          <a href="tel:+447939662421">
             <Phone className="mr-2 h-4 w-4" />
             Call Now
+          </a>
+        </Button>
+         <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex">
+          <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer">
+            <WhatsAppIcon className="mr-2 h-4 w-4" />
+            WhatsApp
           </a>
         </Button>
         <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
@@ -289,9 +306,13 @@ const ContactSection = () => (
                 <MapPin className="h-5 w-5 mr-3 text-primary" />
                 <span>Based in Altrincham</span>
               </a>
-              <a href="tel:07939662421" className="flex items-center hover:text-primary transition-colors">
+              <a href="tel:+447939662421" className="flex items-center hover:text-primary transition-colors">
                 <Phone className="h-5 w-5 mr-3 text-primary" />
-                <span>07939 662421</span>
+                <span>+44 7939 662421</span>
+              </a>
+              <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors">
+                <WhatsAppIcon className="h-5 w-5 mr-3 text-primary" />
+                <span>WhatsApp</span>
               </a>
               <a href="mailto:contact@topdrivingschool.co.uk" className="flex items-center hover:text-primary transition-colors">
                 <Mail className="h-5 w-5 mr-3 text-primary" />
