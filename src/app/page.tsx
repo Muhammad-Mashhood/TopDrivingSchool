@@ -274,25 +274,25 @@ const TestimonialsSection = () => {
                     plugins={[plugin.current]}
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
-                    className="w-full max-w-6xl mx-auto"
+                    className="w-full max-w-4xl mx-auto"
                 >
                     <CarouselContent>
                         {testimonials.map((testimonial, index) => (
                             <CarouselItem key={index}>
-                                <div className="p-1">
+                                <div className="p-1 h-full">
                                     <Card className="overflow-hidden shadow-lg bg-background">
                                         <div className="grid md:grid-cols-2 items-center">
-                                            <div className="relative md:order-2">
+                                            <div className="relative md:order-2 w-full h-[400px]">
                                                 <Image 
                                                     src={testimonial.image}
                                                     alt={`Testimonial from ${testimonial.name}`}
                                                     width={450}
-                                                    height={450}
+                                                    height={400}
                                                     className="object-cover w-full h-full"
                                                     data-ai-hint="happy student"
                                                 />
                                             </div>
-                                            <div className="p-8 md:p-12 flex flex-col justify-center md:order-1">
+                                            <div className="p-6 md:p-8 flex flex-col justify-center md:order-1">
                                                 <div className="flex mb-4">
                                                     {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}
                                                 </div>
