@@ -274,11 +274,11 @@ const TestimonialsSection = () => {
                     plugins={[plugin.current]}
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
-                    className="w-full max-w-4xl mx-auto"
+                    className="w-full max-w-7xl mx-auto"
                 >
                     <CarouselContent>
                         {testimonials.map((testimonial, index) => (
-                            <CarouselItem key={index}>
+                            <CarouselItem key={index} className="md:basis-1/1">
                                 <div className="p-1 h-full">
                                     <Card className="overflow-hidden shadow-lg bg-background">
                                         <div className="grid md:grid-cols-2 items-center">
@@ -286,7 +286,7 @@ const TestimonialsSection = () => {
                                                 <Image 
                                                     src={testimonial.image}
                                                     alt={`Testimonial from ${testimonial.name}`}
-                                                    width={450}
+                                                    width={650}
                                                     height={400}
                                                     className="object-cover w-full h-full"
                                                     data-ai-hint="happy student"
@@ -434,3 +434,4 @@ export default function Home() {
     
 
     
+
