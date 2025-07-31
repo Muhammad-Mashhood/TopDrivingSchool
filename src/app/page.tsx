@@ -377,11 +377,11 @@ const ContactSection = () => (
               </a>
             </CardContent>
           </Card>
-          <div className="rounded-lg shadow-lg w-full h-auto overflow-hidden">
+          <div className="rounded-lg shadow-lg w-full h-[600px] overflow-hidden">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2380.592070344443!2d-2.355627!3d53.382682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bae6007b667e5%3A0x85c4f5a34e8f775!2sTop%20Driving%20School%20Manchester!5e0!3m2!1sen!2suk!4v1628594595244!5m2!1sen!2suk"
-                width="600"
-                height="450"
+                width="100%"
+                height="100%"
                 style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"
