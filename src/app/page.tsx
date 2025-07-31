@@ -226,32 +226,26 @@ const PricingSection = () => (
 
 const testimonials = [
   {
-    name: 'Jessica M.',
     quote: 'Absolutely brilliant! I passed first time with zero faults. Couldn\'t have asked for a better instructor!',
     image: 'https://res.cloudinary.com/duyxw8aet/image/upload/v1753977633/IMG-20250706-WA0047_ftyk6s.jpg',
   },
   {
-    name: 'Liam K.',
     quote: 'Fantastic instructor, very patient and explains everything clearly. Highly recommended.',
     image: 'https://res.cloudinary.com/duyxw8aet/image/upload/v1753977634/IMG-20250706-WA0049_kykoxf.jpg',
   },
   {
-    name: 'Sophie T.',
     quote: 'I was a nervous wreck before I started, but my instructor was so calm and reassuring. So happy I chose Top Driving School!',
     image: 'https://res.cloudinary.com/duyxw8aet/image/upload/v1753977634/IMG-20250706-WA0051_f1qffg.jpg',
   },
   {
-    name: 'Daniel B.',
     quote: 'Great lessons, great price, great instructor. Passed my test with flying colours. Thanks!',
     image: 'https://res.cloudinary.com/duyxw8aet/image/upload/v1753977633/IMG-20250706-WA0046_crr9br.jpg',
   },
   {
-    name: 'Chloe W.',
     quote: 'The best driving school in Manchester! My instructor made learning to drive a fun and enjoyable experience.',
     image: 'https://res.cloudinary.com/duyxw8aet/image/upload/v1753977633/IMG-20250706-WA0044_mguz6c.jpg',
   },
   {
-    name: 'Ryan G.',
     quote: 'I had lessons with other schools before and Top Driving School is by far the best. Thank you for helping me pass!',
     image: 'https://res.cloudinary.com/duyxw8aet/image/upload/v1753977633/IMG-20250706-WA0045_q9ybhb.jpg',
   },
@@ -274,7 +268,7 @@ const TestimonialsSection = () => {
                     plugins={[plugin.current]}
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
-                    className="w-full max-w-7xl mx-auto"
+                    className="w-full max-w-6xl mx-auto"
                 >
                     <CarouselContent>
                         {testimonials.map((testimonial, index) => (
@@ -285,7 +279,7 @@ const TestimonialsSection = () => {
                                             <div className="relative md:order-2 w-full h-[400px]">
                                                 <Image 
                                                     src={testimonial.image}
-                                                    alt={`Testimonial from ${testimonial.name}`}
+                                                    alt={`Testimonial from a happy student`}
                                                     width={650}
                                                     height={400}
                                                     className="object-cover w-full h-full"
@@ -297,7 +291,6 @@ const TestimonialsSection = () => {
                                                     {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-accent fill-accent" />)}
                                                 </div>
                                                 <blockquote className="text-muted-foreground italic text-lg mb-4">"{testimonial.quote}"</blockquote>
-                                                <p className="font-bold text-right">- {testimonial.name}</p>
                                             </div>
                                         </div>
                                     </Card>
@@ -434,4 +427,5 @@ export default function Home() {
     
 
     
+
 
