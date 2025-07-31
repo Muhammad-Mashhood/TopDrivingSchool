@@ -226,24 +226,34 @@ const PricingSection = () => (
 
 const testimonials = [
   {
-    name: 'Sarah L.',
-    quote: 'My instructor was patient and encouraging. I passed my test on the first try! The AI tips for navigating the city centre were a game-changer.',
-    image: 'https://placehold.co/800x600.png',
+    name: 'Jessica M.',
+    quote: 'Absolutely brilliant! I passed first time with zero faults. Couldn\'t have asked for a better instructor!',
+    image: 'https://res.cloudinary.com/duyxw8aet/image/upload/v1753977633/IMG-20250706-WA0047_ftyk6s.jpg',
   },
   {
-    name: 'Tom H.',
-    quote: 'A fantastic experience from start to finish. The booking process was easy, and the lessons were tailored to my learning speed. Highly recommend!',
-    image: 'https://placehold.co/800x600.png',
+    name: 'Liam K.',
+    quote: 'Fantastic instructor, very patient and explains everything clearly. Highly recommended.',
+    image: 'https://res.cloudinary.com/duyxw8aet/image/upload/v1753977634/IMG-20250706-WA0049_kykoxf.jpg',
   },
   {
-    name: 'Emily R.',
-    quote: 'I was a very nervous driver, but TopDrivingSchool helped me build so much confidence. I now feel safe and competent on the road.',
-    image: 'https://placehold.co/800x600.png',
+    name: 'Sophie T.',
+    quote: 'I was a nervous wreck before I started, but my instructor was so calm and reassuring. So happy I chose Top Driving School!',
+    image: 'https://res.cloudinary.com/duyxw8aet/image/upload/v1753977634/IMG-20250706-WA0051_f1qffg.jpg',
   },
   {
-    name: 'David P.',
-    quote: 'The Pass Plus course was brilliant. I feel much more comfortable on motorways and driving at night. Well worth it.',
-    image: 'https://placehold.co/800x600.png',
+    name: 'Daniel B.',
+    quote: 'Great lessons, great price, great instructor. Passed my test with flying colours. Thanks!',
+    image: 'https://res.cloudinary.com/duyxw8aet/image/upload/v1753977633/IMG-20250706-WA0046_crr9br.jpg',
+  },
+  {
+    name: 'Chloe W.',
+    quote: 'The best driving school in Manchester! My instructor made learning to drive a fun and enjoyable experience.',
+    image: 'https://res.cloudinary.com/duyxw8aet/image/upload/v1753977633/IMG-20250706-WA0044_mguz6c.jpg',
+  },
+  {
+    name: 'Ryan G.',
+    quote: 'I had lessons with other schools before and Top Driving School is by far the best. Thank you for helping me pass!',
+    image: 'https://res.cloudinary.com/duyxw8aet/image/upload/v1753977633/IMG-20250706-WA0045_q9ybhb.jpg',
   },
 ];
 
@@ -412,6 +422,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 
