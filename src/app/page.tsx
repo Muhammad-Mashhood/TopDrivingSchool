@@ -1,5 +1,4 @@
 
-
 'use client'
 
 import Image from 'next/image';
@@ -113,12 +112,12 @@ const HeroSection = () => (
           Nervous students are our speciality. Professional, patient, and friendly instruction to help you pass your test with confidence.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto">
+          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto rounded-full">
             <Link href="#services">
               Our Services <ChevronRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+          <Button asChild size="lg" variant="outline" className="w-full sm:w-auto rounded-full">
             <Link href="#contact">Contact Us</Link>
           </Button>
         </div>
@@ -423,3 +422,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
