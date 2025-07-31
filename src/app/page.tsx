@@ -375,6 +375,10 @@ const ContactSection = () => (
                 <Mail className="h-5 w-5 mr-3 text-primary" />
                 <span>contact@topdrivingschool.co.uk</span>
               </a>
+              <a href="mailto:aminmakki@hotmail.com" className="flex items-center hover:text-primary transition-colors">
+                <Mail className="h-5 w-5 mr-3 text-primary" />
+                <span>aminmakki@hotmail.com</span>
+              </a>
             </CardContent>
           </Card>
            <div className="rounded-lg shadow-lg w-full h-[300px] overflow-hidden">
