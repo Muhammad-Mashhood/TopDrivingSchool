@@ -62,7 +62,7 @@ const Logo = () => (
 )
 
 const Header = () => (
-  <header className="z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <header className="z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
     <div className="container flex h-16 max-w-screen-2xl items-center px-4 md:px-6">
       <Link href="#" className="mr-auto flex items-center space-x-2">
         <Logo />
@@ -400,7 +400,7 @@ const ContactSection = () => (
 );
 
 const Footer = () => (
-  <footer className="bg-background border-t">
+  <footer className="bg-background">
     <div className="container py-6 text-center text-muted-foreground px-4 md:px-6">
       <p>&copy; {new Date().getFullYear()} Top Driving School. All rights reserved.</p>
     </div>
@@ -424,3 +424,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
