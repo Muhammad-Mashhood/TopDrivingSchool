@@ -221,7 +221,7 @@ const PricingSection = () => (
                                 <span className="text-5xl font-bold text-neutral-50">{tier.price}</span>
                             </div>
                             <p className="text-neutral-300 mb-6 flex-grow">{tier.description}</p>
-                             <Link href="#contact" className="card-3d mt-auto w-full p-3 text-base font-semibold text-center rounded-xl no-underline text-white">
+                             <Link href="#contact" className="button-3d mt-auto w-full text-base font-semibold text-center no-underline text-white">
                                 Book Now
                             </Link>
                         </div>

@@ -88,7 +88,7 @@
     @apply relative rounded-2xl p-6 flex flex-col items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:transform hover:-translate-y-2;
     background:
       radial-gradient(circle at top right, rgba(255, 255, 255, 0.4) 0%, transparent 30%),
-      linear-gradient(to bottom, hsl(215, 50%, 40%) 0%, hsl(220, 30%, 15%) 100%);
+      linear-gradient(to bottom, hsl(215, 30%, 25%) 0%, hsl(220, 30%, 10%) 100%);
     box-shadow: 
       0 60px 80px rgba(0, 0, 0, 0.6), /* Deeper floating shadow */
       inset 0 10px 15px rgba(255, 255, 255, 0.3), /* Brighter top highlight */
@@ -102,5 +102,24 @@
     background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.5) 0%, transparent 50%);
     pointer-events: none;
     opacity: 0.5; /* Soften the main reflection */
+  }
+  .button-3d {
+    @apply relative rounded-xl p-3 flex items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:transform hover:-translate-y-1;
+    background:
+      radial-gradient(circle at top right, rgba(255, 255, 255, 0.3) 0%, transparent 25%),
+      linear-gradient(to bottom, hsl(215, 30%, 35%) 0%, hsl(220, 30%, 15%) 100%);
+    box-shadow: 
+      0 10px 20px rgba(0, 0, 0, 0.4), /* Softer floating shadow */
+      inset 0 4px 6px rgba(255, 255, 255, 0.2), /* Softer top highlight */
+      inset 0 -4px 6px rgba(0, 0, 0, 0.4), /* Softer bottom shadow */
+      inset 4px 0 6px rgba(255, 255, 255, 0.2), /* Softer left highlight */
+      inset -4px 0 6px rgba(0, 0, 0, 0.4); /* Softer right shadow */
+  }
+  .button-3d::before {
+    content: "";
+    @apply absolute top-0 left-0 w-full h-full;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.4) 0%, transparent 40%);
+    pointer-events: none;
+    opacity: 0.6;
   }
 }
