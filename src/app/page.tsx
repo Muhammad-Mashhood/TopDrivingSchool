@@ -167,7 +167,7 @@ const services = [
 ];
 
 const ServicesSection = () => (
-    <section id="services" className="w-full py-16 bg-card md:min-h-screen flex flex-col justify-center">
+    <section id="services" className="w-full py-16 bg-transparent md:min-h-screen flex flex-col justify-center">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
@@ -258,7 +258,7 @@ const TestimonialsSection = () => {
     );
 
     return (
-        <section id="testimonials" className="w-full py-8 bg-card">
+        <section id="testimonials" className="w-full py-8 bg-transparent">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center space-y-4 mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary">What Our Students Say</h2>
@@ -306,7 +306,7 @@ const TestimonialsSection = () => {
 };
 
 const AiTipsSection = () => (
-  <section id="ai-tips" className="py-8 bg-background">
+  <section id="ai-tips" className="py-8 bg-transparent">
     <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center text-primary">
@@ -323,7 +323,7 @@ const AiTipsSection = () => (
 );
 
 const ContactSection = () => (
-  <section id="contact" className="py-8 bg-card">
+  <section id="contact" className="py-8 bg-transparent">
     <div className="container px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-primary">Get In Touch</h2>
@@ -392,7 +392,7 @@ const ContactSection = () => (
 );
 
 const Footer = () => (
-  <footer className="bg-background border-t">
+  <footer className="bg-transparent border-t">
     <div className="container py-6 text-center text-muted-foreground px-4 md:px-6">
       <p>&copy; {new Date().getFullYear()} Top Driving School. All rights reserved.</p>
     </div>
@@ -416,6 +416,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
