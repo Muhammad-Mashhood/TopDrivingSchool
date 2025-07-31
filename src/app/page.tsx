@@ -52,11 +52,11 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const Logo = () => (
     <Image 
-        src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753976558/Top_Driving_School_transparent_Logo_syepqv.png"
+        src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753976947/Top_Driving_School_transparent_Logo_1_ys7cep.png"
         alt="Top Driving School Logo"
-        width={48}
-        height={48}
-        className="h-12 w-12"
+        width={56}
+        height={56}
+        className="h-14 w-14"
     />
 )
 
