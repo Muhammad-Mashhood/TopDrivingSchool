@@ -55,9 +55,9 @@ const Header = () => (
         <span className="font-bold sm:inline-block text-xl">Top Driving School</span>
       </Link>
       <nav className="hidden items-center justify-center gap-2 text-sm font-medium md:flex absolute left-1/2 -translate-x-1/2">
-         <div className="button-3d flex items-center gap-2 rounded-full bg-background/30 p-1 backdrop-blur-md">
+         <div className="navbar-glass flex items-center gap-2 p-1">
             {navLinks.map(link => (
-                <Link key={link.href} href={link.href} className="px-4 py-1.5 text-foreground/80 transition-colors hover:text-foreground rounded-full hover:bg-muted">{link.label}</Link>
+                <Link key={link.href} href={link.href} className="px-4 py-1.5 text-foreground/80 transition-colors hover:text-foreground rounded-full hover:bg-white/10">{link.label}</Link>
             ))}
          </div>
       </nav>
@@ -265,7 +265,7 @@ const TestimonialsSection = () => {
     );
 
     return (
-        <section id="testimonials" className="relative w-full py-8 overflow-hidden">
+        <section id="testimonials" className="relative w-full py-8 bg-transparent">
             <div className="container relative mx-auto px-4 md:px-6">
                 <div className="text-center space-y-4 mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary">What Our Students Say</h2>
