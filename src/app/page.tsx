@@ -177,7 +177,7 @@ const ServicesSection = () => (
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {services.map((service) => (
-                    <Card key={service.title} className="bg-background/50 text-center flex flex-col items-center p-6 shadow-lg hover:shadow-primary/20 transition-shadow duration-300 border-0">
+                    <Card key={service.title} className="bg-background/50 text-center flex flex-col items-center p-6 transition-all duration-300 border-t-2 border-l-2 border-b-4 border-r-4 border-border/20 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-1">
                         <div className="bg-secondary p-4 rounded-full mb-4">
                             <service.icon className="h-8 w-8 text-primary" />
                         </div>
@@ -204,7 +204,7 @@ const PricingSection = () => (
                 </p>
             </div>
             <div className="flex justify-center">
-                <Card className="max-w-sm w-full shadow-lg hover:shadow-primary/20 transition-shadow duration-300 border-0">
+                <Card className="max-w-sm w-full transition-all duration-300 border-t-2 border-l-2 border-b-4 border-r-4 border-border/20 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-1">
                     <CardHeader className="text-center bg-card p-6">
                         <CardTitle className="text-2xl">Hourly Lessons</CardTitle>
                         <CardDescription>Flexible and tailored to your pace (automatic car only).</CardDescription>
