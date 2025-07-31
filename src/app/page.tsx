@@ -98,8 +98,8 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-  <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
-    <div className="container relative z-10 grid md:grid-cols-2 gap-8 items-center py-12 px-4 md:px-6">
+  <section className="relative w-full h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div className="container relative z-10 grid md:grid-cols-2 gap-8 items-center px-4 md:px-6">
       <div className="space-y-6 text-center md:text-left">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
           Driving School in Manchester
@@ -428,3 +428,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
