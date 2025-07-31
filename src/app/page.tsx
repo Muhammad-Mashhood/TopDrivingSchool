@@ -25,7 +25,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { DrivingTipsForm } from '@/components/driving-tips-form';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
     { href: "#services", label: "Services" },
@@ -101,6 +101,9 @@ const Header = () => (
                 </Button>
             </SheetTrigger>
             <SheetContent side="right">
+                <SheetHeader>
+                  <SheetTitle>Navigation Menu</SheetTitle>
+                </SheetHeader>
                 <div className="flex flex-col gap-y-4 pt-6">
                     {navLinks.map(link => (
                         <Link key={link.href} href={link.href} className="text-lg font-medium text-foreground/80 transition-colors hover:text-foreground">{link.label}</Link>
