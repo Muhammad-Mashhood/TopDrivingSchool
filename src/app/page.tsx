@@ -65,7 +65,7 @@ const Header = () => (
         <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex">
             <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={24} height={24} />
         </a>
-        <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex rounded-full button-3d">
+        <Button size="sm" asChild className="hidden sm:inline-flex rounded-full button-3d">
           <a href="tel:+447939662421">
             <Phone className="mr-2 h-4 w-4" />
             Call Now
@@ -113,7 +113,7 @@ const HeroSection = () => (
               Our Services <ChevronRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="w-full sm:w-auto rounded-full button-3d">
+          <Button asChild size="lg" className="w-full sm:w-auto rounded-full button-3d">
             <Link href="#contact">Contact Us</Link>
           </Button>
         </div>
@@ -427,3 +427,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
