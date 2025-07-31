@@ -110,15 +110,15 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-  <section className="container grid lg:grid-cols-2 gap-8 items-center py-12 px-4 md:px-6 md:min-h-[calc(100vh-4rem)]">
-    <div className="space-y-6 text-center lg:text-left">
+  <section className="container grid grid-cols-1 gap-8 items-center py-12 px-4 md:px-6 md:min-h-[calc(100vh-4rem)]">
+    <div className="space-y-6 text-center">
       <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
         Driving School in Manchester
       </h1>
-      <p className="text-lg text-muted-foreground">
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
         Nervous students are our speciality. Professional, patient, and friendly instruction to help you pass your test with confidence.
       </p>
-      <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto">
           <Link href="#services">
             Our Services <ChevronRight className="ml-2 h-5 w-5" />
@@ -128,16 +128,6 @@ const HeroSection = () => (
           <Link href="#contact">Contact Us</Link>
         </Button>
       </div>
-    </div>
-    <div className="relative">
-      <Image
-        src="https://placehold.co/1200x800.png"
-        alt="Driving instructor with a student"
-        width={1200}
-        height={800}
-        className="rounded-xl shadow-2xl"
-        data-ai-hint="driving lesson"
-      />
     </div>
   </section>
 );
@@ -177,7 +167,7 @@ const ServicesSection = () => (
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {services.map((service) => (
-                    <Card key={service.title} className="bg-background/50 text-center flex flex-col items-center p-6 transition-all duration-300 border-0 hover:shadow-2xl hover:-translate-y-1">
+                    <Card key={service.title} className="bg-background/50 text-center flex flex-col items-center p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-0">
                         <div className="bg-secondary p-4 rounded-full mb-4">
                             <service.icon className="h-8 w-8 text-primary" />
                         </div>
@@ -223,7 +213,7 @@ const PricingSection = () => (
             </div>
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {pricingTiers.map((tier) => (
-                    <Card key={tier.title} className="w-full transition-all duration-300 bg-card border border-primary/20 hover:shadow-primary/20 shadow-lg hover:-translate-y-1 flex flex-col">
+                    <Card key={tier.title} className="w-full transition-all duration-300 bg-card hover:shadow-primary/20 shadow-lg hover:-translate-y-1 flex flex-col border-primary/20">
                         <CardHeader className="text-center p-6">
                             <CardTitle className="text-2xl">{tier.title}</CardTitle>
                         </CardHeader>
