@@ -99,7 +99,7 @@ const Header = () => (
 
 const HeroSection = () => (
   <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
-    <div className="absolute inset-0 top-0 h-full w-full bg-[radial-gradient(ellipse_at_center,_rgba(49,10,82,0.6)_0%,_rgba(0,0,0,1)_50%,_rgba(255,215,0,0.1)_100%)]"></div>
+    <div className="absolute inset-0 top-0 h-full w-full bg-[radial-gradient(ellipse_at_top_right,_rgba(20,20,80,0.5)_0%,_rgba(49,10,82,0.3)_30%,_rgba(0,0,0,1)_80%)]"></div>
     <div className="container relative z-10 grid md:grid-cols-2 gap-8 items-center py-12 px-4 md:px-6">
       <div className="space-y-6 text-center md:text-left">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">
@@ -159,7 +159,7 @@ const services = [
 
 const ServicesSection = () => (
     <section id="services" className="relative w-full py-16 flex flex-col justify-center overflow-hidden">
-         <div className="absolute inset-0 top-0 h-full w-full bg-[radial-gradient(ellipse_at_top,_rgba(255,215,0,0.1)_0%,_rgba(0,0,0,0)_40%)]"></div>
+        <div className="absolute inset-0 top-0 h-full w-full bg-gradient-to-b from-black via-gray-900/50 to-black"></div>
         <div className="container relative mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
@@ -206,7 +206,7 @@ const pricingTiers = [
 
 const PricingSection = () => (
     <section id="pricing" className="relative w-full py-16 flex flex-col justify-center overflow-hidden">
-        <div className="absolute inset-0 top-0 h-full w-full bg-[radial-gradient(ellipse_at_bottom,_rgba(255,255,255,0.05)_0%,_rgba(0,0,0,0)_50%)]"></div>
+        <div className="absolute inset-0 top-0 h-full w-full bg-gradient-to-t from-black via-blue-900/20 to-black"></div>
         <div className="container relative mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Pricing</h2>
