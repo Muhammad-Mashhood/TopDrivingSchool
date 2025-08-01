@@ -49,9 +49,24 @@ export async function getDrivingTips(prevState: DrivingTipsState, formData: Form
             tips: result.drivingTips,
         };
     } catch (error) {
-        console.error(error);
+        console.error('AI Generation Error:', error);
+        
+        // More specific error handling
+        if (error instanceof Error) {
+            if (error.message.includes('API key')) {
+                return {
+                    message: 'AI service configuration error. Please contact support.',
+                };
+            }
+            if (error.message.includes('quota') || error.message.includes('limit')) {
+                return {
+                    message: 'AI service temporarily unavailable. Please try again later.',
+                };
+            }
+        }
+        
         return {
-            message: 'An unexpected error occurred on the server. Please try again.',
+            message: 'An unexpected error occurred while generating tips. Please try again.',
         };
     }
 }

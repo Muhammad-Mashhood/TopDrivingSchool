@@ -63,7 +63,7 @@ const Header = () => (
       <div className="flex items-center justify-end ml-auto">
         {/* Desktop buttons - hidden on mobile and tablet, only show on xl screens */}
         <div className="hidden xl:flex items-center space-x-3 mr-4">
-          <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="h-9 w-9 p-0 flex items-center justify-center rounded-full">
+          <a href="https://wa.me/447939662421?text=Hi%2C%20I%27m%20interested%20in%20driving%20lessons" target="_blank" rel="noopener noreferrer" className="h-9 w-9 p-0 flex items-center justify-center rounded-full">
               <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={32} height={32} />
           </a>
           <Button asChild className="rounded-full button-3d text-sm text-white">
@@ -104,7 +104,7 @@ const Header = () => (
                             Book Now
                           </Link>
                         </Button>
-                         <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="flex items-center text-lg font-medium text-foreground/80 transition-colors hover:text-foreground">
+                         <a href="https://wa.me/447939662421?text=Hi%2C%20I%27m%20interested%20in%20driving%20lessons" target="_blank" rel="noopener noreferrer" className="flex items-center text-lg font-medium text-foreground/80 transition-colors hover:text-foreground">
                             <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={24} height={24} className="mr-2" />
                             WhatsApp
                         </a>
@@ -118,22 +118,22 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-  <section className="relative w-full h-screen flex items-center justify-center overflow-hidden pt-20">
-    <div className="container relative z-10 grid md:grid-cols-2 gap-8 items-center px-4 md:px-6">
-      <div className="space-y-6 text-center md:text-left">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tighter text-primary">
+  <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-2 md:pt-20 pb-8 md:pb-0">
+    <div className="container relative z-10 grid md:grid-cols-2 gap-8 md:gap-8 items-center px-4 md:px-6">
+      <div className="space-y-8 md:space-y-6 text-center md:text-left">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter text-primary leading-tight">
           Driving School in Manchester
         </h1>
-        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto md:mx-0">
+        <p className="text-lg sm:text-xl md:text-lg text-muted-foreground max-w-2xl mx-auto md:mx-0 leading-relaxed">
           Nervous students are our speciality. Professional, patient, and friendly instruction to help you pass your test with confidence.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto rounded-full button-3d px-8 py-3">
+        <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-5">
+          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto rounded-full button-3d px-9 py-4 text-lg">
             <Link href="#services">
               Our Services <ChevronRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-          <Button asChild className="w-full sm:w-auto rounded-full button-3d px-8 py-3">
+          <Button asChild className="w-full sm:w-auto rounded-full button-3d px-9 py-4 text-lg">
             <Link href="#contact" className="text-white">Contact Us</Link>
           </Button>
         </div>
@@ -144,7 +144,7 @@ const HeroSection = () => (
           alt="Modern car for driving lessons"
           width={600}
           height={400}
-          className="object-contain drop-shadow-lg w-full max-w-md md:max-w-full"
+          className="object-contain drop-shadow-lg w-full max-w-sm sm:max-w-md md:max-w-full"
           data-ai-hint="modern car"
         />
       </div>
@@ -526,15 +526,15 @@ const ContactSection = ({ preSelectedPlan }: { preSelectedPlan?: string }) => {
                   <MapPin className="h-4 w-4 md:h-5 md:w-5 mr-3 text-red-500 flex-shrink-0" />
                   <span>Based in Altrincham, Manchester</span>
                 </a>
-                <a href="mailto:baqimuhammad42@gmail.com" className="flex items-center hover:text-primary transition-colors text-sm md:text-base">
+                <a href="mailto:aminmakki@hotmail.com" className="flex items-center hover:text-primary transition-colors text-sm md:text-base">
                   <Mail className="h-4 w-4 md:h-5 md:w-5 mr-3 text-accent flex-shrink-0" />
-                  <span>baqimuhammad42@gmail.com</span>
+                  <span>aminmakki@hotmail.com</span>
                 </a>
-                <a href="tel:+447939662421" className="flex items-center hover:text-primary transition-colors text-sm md:text-base">
+                <a href="https://wa.me/447939662421?text=Hi%2C%20I%27m%20interested%20in%20driving%20lessons" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors text-sm md:text-base">
                   <Phone className="h-4 w-4 md:h-5 md:w-5 mr-3 text-green-500 flex-shrink-0" />
                   <span>+44 7939 662421</span>
                 </a>
-                <a href="https://wa.me/447939662421" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors text-sm md:text-base">
+                <a href="https://wa.me/447939662421?text=Hi%2C%20I%27m%20interested%20in%20driving%20lessons" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors text-sm md:text-base">
                    <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={16} height={16} className="w-4 h-4 md:w-5 md:h-5 mr-3 flex-shrink-0" />
                   <span>WhatsApp</span>
                 </a>
