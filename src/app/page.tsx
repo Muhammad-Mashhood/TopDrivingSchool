@@ -66,7 +66,7 @@ const Header = () => (
             <Image src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753977352/Whatsapp-Logo-PNG-Images-HD_xyrklr.png" alt="WhatsApp" width={32} height={32} />
         </a>
         <Button size="sm" asChild className="hidden lg:inline-flex rounded-full button-3d">
-          <a href="tel:+447939662421">
+          <a href="tel:+447939662421" className="text-white">
             <Phone className="mr-2 h-4 w-4" />
             Call Now
           </a>
@@ -131,7 +131,7 @@ const HeroSection = () => (
             </Link>
           </Button>
           <Button asChild size="lg" className="w-full sm:w-auto rounded-full button-3d">
-            <Link href="#contact">Contact Us</Link>
+            <Link href="#contact" className="text-white">Contact Us</Link>
           </Button>
         </div>
       </div>
