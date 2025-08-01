@@ -22,11 +22,7 @@ const GenerateDrivingTipsInputSchema = z.object({
     .describe('A list of major streets and intersections in Manchester.'),
   constructionUpdates: z
     .string()
-    .describe('Information about any current or upcoming construction in Manchester.'),
-  configuredTips: z
-    .string()
-    .optional()
-    .describe('Administrator configured driving tips.')
+    .describe('Information about any current or upcoming construction in Manchester.')
 });
 export type GenerateDrivingTipsInput = z.infer<
   typeof GenerateDrivingTipsInputSchema
@@ -49,12 +45,13 @@ const prompt = ai.definePrompt({
   name: 'generateDrivingTipsPrompt',
   input: {schema: GenerateDrivingTipsInputSchema},
   output: {schema: GenerateDrivingTipsOutputSchema},
-  prompt: `You are an expert driving instructor familiar with Manchester. Based on the current weather conditions, major streets, and any construction updates, provide a list of driving tips to help drivers stay safe and prepared.
+  prompt: `You are an expert driving instructor familiar with Manchester. Based on the current weather conditions, major streets, and any construction updates, provide EXACTLY 5 driving tips to help drivers stay safe and prepared.
 
 Weather Conditions: {{{weatherConditions}}}
 Major Streets: {{{majorStreets}}}
 Construction Updates: {{{constructionUpdates}}}
-Administrator Configured Tips: {{{configuredTips}}}
+
+IMPORTANT: You must provide exactly 5 tips, no more, no less. Each tip should be practical and specific to the conditions described.
 
 Driving Tips:`,config: {
     safetySettings: [

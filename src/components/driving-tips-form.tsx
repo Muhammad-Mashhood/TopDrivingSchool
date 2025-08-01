@@ -55,10 +55,6 @@ export function DrivingTipsForm() {
                 <Input id="constructionUpdates" name="constructionUpdates" placeholder="e.g., Road closure on George Street" suppressHydrationWarning />
                  {state.errors?.constructionUpdates && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.constructionUpdates[0]}</p>}
               </div>
-              <div>
-                <Label htmlFor="configuredTips">Admin Configured Tips (Optional)</Label>
-                <Textarea id="configuredTips" name="configuredTips" placeholder="Enter any pre-configured tips here..." suppressHydrationWarning />
-              </div>
             </div>
             <SubmitButton />
              {state.message && state.message !== 'success' && (

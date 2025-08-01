@@ -7,7 +7,6 @@ const DrivingTipsSchema = z.object({
   weatherConditions: z.string().min(3, { message: "Weather conditions must be described." }),
   majorStreets: z.string().min(3, { message: "Please list at least one major street." }),
   constructionUpdates: z.string().min(3, { message: "Please provide construction updates." }),
-  configuredTips: z.string().optional(),
 });
 
 export type DrivingTipsState = {
@@ -17,7 +16,6 @@ export type DrivingTipsState = {
     weatherConditions?: string[];
     majorStreets?: string[];
     constructionUpdates?: string[];
-    configuredTips?: string[];
   };
 };
 
@@ -26,7 +24,6 @@ export async function getDrivingTips(prevState: DrivingTipsState, formData: Form
         weatherConditions: formData.get('weatherConditions'),
         majorStreets: formData.get('majorStreets'),
         constructionUpdates: formData.get('constructionUpdates'),
-        configuredTips: formData.get('configuredTips'),
     });
 
     if (!validatedFields.success) {
@@ -39,14 +36,43 @@ export async function getDrivingTips(prevState: DrivingTipsState, formData: Form
     try {
         const input: GenerateDrivingTipsInput = validatedFields.data;
         const result = await generateDrivingTips(input);
-        if (result.drivingTips.length === 0) {
+        
+        // Ensure we have exactly 5 tips
+        let tips = result.drivingTips;
+        
+        if (tips.length === 0) {
             return {
                 message: "Couldn't generate tips based on the provided information. Try being more specific.",
             }
         }
+        
+        // If we have more than 5 tips, take the first 5
+        if (tips.length > 5) {
+            tips = tips.slice(0, 5);
+        }
+        
+        // If we have fewer than 5 tips, add generic ones to reach 5
+        while (tips.length < 5) {
+            const genericTips = [
+                "Maintain a safe following distance of at least 3 seconds behind the vehicle ahead.",
+                "Check your mirrors regularly and be aware of your surroundings.",
+                "Keep your speed appropriate for the current road and weather conditions.",
+                "Ensure your vehicle is properly maintained with good tires and working lights.",
+                "Stay focused and avoid distractions while driving."
+            ];
+            
+            // Add generic tips that aren't already included
+            for (const genericTip of genericTips) {
+                if (tips.length < 5 && !tips.some(tip => tip.toLowerCase().includes(genericTip.toLowerCase().substring(0, 10)))) {
+                    tips.push(genericTip);
+                }
+            }
+            break; // Prevent infinite loop
+        }
+        
         return {
             message: 'success',
-            tips: result.drivingTips,
+            tips: tips.slice(0, 5), // Ensure exactly 5 tips
         };
     } catch (error) {
         console.error('AI Generation Error:', error);
