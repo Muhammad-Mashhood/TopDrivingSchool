@@ -88,9 +88,9 @@
     @apply relative rounded-2xl p-6 flex flex-col items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:transform hover:-translate-y-2;
     background: linear-gradient(to bottom, hsl(220, 30%, 20%), hsl(220, 25%, 10%));
     box-shadow: 
-      0 0 0 1px hsla(0, 0%, 0%, 0.6),
-      0 0 20px 2px hsla(0, 0%, 0%, 0.5),
-      inset 0 -10px 15px rgba(0, 0, 0, 0.5); /* Deeper bottom shadow */
+      inset 0 2px 8px 0px rgba(0, 0, 0, 0.5), /* Soft inner top-edge shadow */
+      0 8px 25px -5px rgba(0, 0, 0, 0.3), /* Outer drop shadow */
+      0 0 0 1px rgba(0, 0, 0, 0.4); /* Thin border-like shadow */
   }
   .button-3d {
     @apply relative rounded-xl p-3 flex items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:transform hover:-translate-y-1;
