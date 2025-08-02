@@ -2,10 +2,7 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
-  output: 'export',
-  trailingSlash: true,
-  // Configuration for static export
-  serverExternalPackages: ['@genkit-ai/googleai'],
+  // Remove output: 'export' to allow API routes and Server Actions
   typescript: {
     ignoreBuildErrors: true,
   },

@@ -1,7 +1,9 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
+import { getDrivingTips, type DrivingTipsState } from '@/app/actions';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -9,56 +11,24 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Sparkles, List, AlertCircle, Loader2 } from 'lucide-react';
 
-export type DrivingTipsState = {
-  message: string;
-  tips?: string[];
-  errors?: {
-    weatherConditions?: string[];
-    majorStreets?: string[];
-    constructionUpdates?: string[];
-  };
-};
-
 const initialState: DrivingTipsState = {
   message: '',
   tips: undefined,
   errors: undefined,
 };
 
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <Button type="submit" disabled={pending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 button-3d">
+      {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
+      {pending ? 'Generating...' : 'Generate Safe Driving Tips'}
+    </Button>
+  );
+}
+
 export function DrivingTipsForm() {
-  const [state, setState] = useState<DrivingTipsState>(initialState);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsLoading(true);
-    
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      weatherConditions: formData.get('weatherConditions') as string,
-      majorStreets: formData.get('majorStreets') as string,
-      constructionUpdates: formData.get('constructionUpdates') as string,
-    };
-
-    try {
-      const response = await fetch('/api/generate-tips', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-      setState(result);
-    } catch (error) {
-      setState({
-        message: 'Network error. Please check your connection and try again.',
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const [state, formAction] = useActionState(getDrivingTips, initialState);
 
   return (
     <div className="grid gap-8 md:grid-cols-2 items-stretch">
@@ -68,7 +38,7 @@ export function DrivingTipsForm() {
           <CardDescription>Enter current Altrincham, Manchester driving conditions to get tailored tips.</CardDescription>
         </CardHeader>
         <CardContent className="flex-grow flex flex-col">
-          <form onSubmit={handleSubmit} className="space-y-4 flex flex-col flex-grow">
+          <form action={formAction} className="space-y-4 flex flex-col flex-grow">
             <div className="flex-grow space-y-4">
               <div>
                 <Label htmlFor="weatherConditions">Weather Conditions</Label>
@@ -78,7 +48,7 @@ export function DrivingTipsForm() {
               <div>
                 <Label htmlFor="majorStreets">Major Streets / Intersections</Label>
                 <Input id="majorStreets" name="majorStreets" placeholder="e.g., A56, Dunham Road" suppressHydrationWarning />
-                {state.errors?.majorStreets && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.majorStreets[0]}</p>}
+                 {state.errors?.majorStreets && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.majorStreets[0]}</p>}
               </div>
               <div>
                 <Label htmlFor="constructionUpdates">Construction Updates</Label>
@@ -86,10 +56,7 @@ export function DrivingTipsForm() {
                  {state.errors?.constructionUpdates && <p className="pt-1 text-sm font-medium text-destructive">{state.errors.constructionUpdates[0]}</p>}
               </div>
             </div>
-            <Button type="submit" disabled={isLoading} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 button-3d">
-              {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
-              {isLoading ? 'Generating...' : 'Generate Safe Driving Tips'}
-            </Button>
+            <SubmitButton />
              {state.message && state.message !== 'success' && (
               <div className="pt-2 text-sm font-medium text-destructive flex items-center">
                 <AlertCircle className="h-4 w-4 mr-2 shrink-0" />
