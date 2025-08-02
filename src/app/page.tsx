@@ -144,6 +144,9 @@ const HeroSection = () => (
           alt="Modern car for driving lessons"
           width={600}
           height={400}
+          priority
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
           className="object-contain drop-shadow-lg w-full max-w-sm sm:max-w-md md:max-w-full"
           data-ai-hint="modern car"
         />
@@ -185,7 +188,7 @@ const ServicesSection = () => (
                     We offer a range of services to meet your driving needs.
                 </p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
                 {services.map((service) => (
                     <Card key={service.title} className="bg-transparent text-center flex flex-col items-center p-3 md:p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-0">
                         <div className="bg-secondary p-3 md:p-4 rounded-full mb-3 md:mb-4">
