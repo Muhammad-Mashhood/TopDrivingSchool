@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
   
+  // Essential for Cloudflare Pages
+  trailingSlash: false,
+  skipTrailingSlashRedirect: true,
+  
   // Webpack optimization for file size
   webpack: (config, { isServer }) => {
     // Disable caching in production to reduce file sizes
