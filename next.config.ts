@@ -12,10 +12,18 @@ const nextConfig: NextConfig = {
   
   // Webpack optimization for file size
   webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Disable caching in production to reduce file sizes
-      config.cache = false;
-    }
+    // Disable caching in production to reduce file sizes
+    config.cache = false;
+    
+    // Additional optimization to prevent large files
+    config.optimization = {
+      ...config.optimization,
+      splitChunks: {
+        chunks: 'all',
+        maxSize: 244 * 1024, // 244KB max chunk size
+      },
+    };
+    
     return config;
   },
   

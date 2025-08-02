@@ -7,10 +7,18 @@
 .next/static/chunks/webpack/
 .next/static/chunks/webpack/**/*
 
-# All cache files
+# All cache files and directories
+cache/
+cache/**/*
 **/cache/
 **/cache/**/*
 **/*.pack
+
+# Webpack specific files
+**/webpack/
+**/webpack/**/*
+**/*.pack.gz
+**/*.map
 
 # Build cache
 node_modules/
