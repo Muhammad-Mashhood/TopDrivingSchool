@@ -2,8 +2,7 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
-  output: 'export',
-  trailingSlash: true,
+  // Remove output: 'export' to allow Server Actions
   typescript: {
     ignoreBuildErrors: true,
   },
