@@ -30,127 +30,90 @@ export function DrivingTipsForm() {
   const [pending, setPending] = useState(false);
 
   const generateAITips = async (data: any) => {
+    // Use the Google Gemini API for real AI-generated tips
+    const API_KEY = 'AIzaSyD3Sf9lIRBtpJbqy0vvjgBRLVkn_TagLt4'; // Your API key from Cloudflare
+    
     try {
-      // For now, let's use an enhanced contextual tip generator
-      // This provides intelligent responses based on the actual input
-      const weatherTips = {
-        rain: [
-          "Reduce speed by 10-15 mph and increase following distance to 4-6 seconds in wet conditions.",
-          "Ensure windshield wipers are functioning properly and headlights are on for visibility.",
-          "Avoid sudden braking or sharp turns on wet roads to prevent skidding."
-        ],
-        fog: [
-          "Use low-beam headlights and fog lights if available - avoid high beams in foggy conditions.",
-          "Reduce speed significantly and use road markings and cat's eyes for guidance.",
-          "Increase following distance to at least 6 seconds as visibility is severely reduced."
-        ],
-        snow: [
-          "Drive slowly and smoothly, avoiding sudden acceleration, braking, or steering movements.",
-          "Keep extra distance from other vehicles and clear all snow from windows and lights.",
-          "Consider using winter tires or chains if conditions are severe."
-        ],
-        sunny: [
-          "Be aware of sun glare, especially during morning and evening rush hours.",
-          "Keep sunglasses handy and use sun visors effectively.",
-          "Watch for increased pedestrian and cyclist activity in good weather."
-        ]
-      };
+      const prompt = `Generate exactly 5 specific, practical driving safety tips for Altrincham, Manchester based on these current conditions:
 
-      const streetTips = {
-        a56: [
-          "A56 can be particularly busy during rush hours - allow extra time for your journey.",
-          "Watch for speed cameras along the A56 corridor and maintain appropriate speeds.",
-          "Be cautious of merge points and heavy traffic near major junctions."
-        ],
-        center: [
-          "Altrincham town center has many pedestrian crossings - be extra vigilant.",
-          "Parking can be limited in the center - consider using designated car parks.",
-          "Watch for cyclists and pedestrians, especially near shops and restaurants."
-        ],
-        residential: [
-          "Reduce speed in residential areas and watch for children and pets.",
-          "Be mindful of parked cars and limited visibility around corners.",
-          "Respect local parking restrictions and residents' access needs."
-        ]
-      };
+Weather: ${data.weatherConditions}
+Major Streets/Areas: ${data.majorStreets}
+Construction Updates: ${data.constructionUpdates}
 
-      const constructionTips = {
-        roadworks: [
-          "Follow temporary traffic signs and reduced speed limits in construction zones.",
-          "Merge early when lanes are closed and be patient with delayed traffic.",
-          "Keep extra distance from construction vehicles and workers."
-        ],
-        closure: [
-          "Plan alternative routes in advance using GPS or local traffic apps.",
-          "Allow significantly more time for your journey due to diversions.",
-          "Check local traffic updates before traveling for the latest information."
-        ]
-      };
+Requirements:
+- Each tip should be specific to the conditions provided
+- Focus on safety and practical advice
+- Keep each tip concise (1-2 sentences)
+- Include local knowledge when possible
+- Return as a JSON array of exactly 5 strings
 
-      // Analyze input to determine relevant tips
-      const weather = data.weatherConditions.toLowerCase();
-      const streets = data.majorStreets.toLowerCase();
-      const construction = data.constructionUpdates.toLowerCase();
+Example format: ["tip 1", "tip 2", "tip 3", "tip 4", "tip 5"]`;
 
-      let selectedTips: string[] = [];
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contents: [{
+            parts: [{
+              text: prompt
+            }]
+          }]
+        })
+      });
 
-      // Weather-based tips
-      if (weather.includes('rain') || weather.includes('wet')) {
-        selectedTips.push(...weatherTips.rain.slice(0, 2));
-      } else if (weather.includes('fog') || weather.includes('mist')) {
-        selectedTips.push(...weatherTips.fog.slice(0, 2));
-      } else if (weather.includes('snow') || weather.includes('ice')) {
-        selectedTips.push(...weatherTips.snow.slice(0, 2));
-      } else {
-        selectedTips.push(...weatherTips.sunny.slice(0, 1));
+      if (!response.ok) {
+        throw new Error('API request failed');
       }
 
-      // Street-based tips
-      if (streets.includes('a56') || streets.includes('a 56')) {
-        selectedTips.push(streetTips.a56[0]);
-      } else if (streets.includes('center') || streets.includes('centre') || streets.includes('town')) {
-        selectedTips.push(streetTips.center[0]);
-      } else {
-        selectedTips.push(streetTips.residential[0]);
-      }
+      const result = await response.json();
+      const text = result.candidates[0].content.parts[0].text;
 
-      // Construction-based tips
-      if (construction.includes('closure') || construction.includes('closed') || construction.includes('blocked')) {
-        selectedTips.push(...constructionTips.closure.slice(0, 2));
-      } else if (construction.includes('roadwork') || construction.includes('construction') || construction.includes('work')) {
-        selectedTips.push(constructionTips.roadworks[0]);
-      } else {
-        selectedTips.push("Stay alert for any unexpected road conditions or temporary changes.");
-      }
+      // Try to parse the JSON response
+      let tips: string[];
+      try {
+        tips = JSON.parse(text);
+        if (!Array.isArray(tips) || tips.length !== 5) {
+          throw new Error('Invalid response format');
+        }
+      } catch {
+        // Fallback: split by lines and clean up
+        tips = text
+          .split('\n')
+          .filter((line: string) => line.trim() && !line.includes('```') && !line.includes('[') && !line.includes(']'))
+          .map((line: string) => line.replace(/^\d+\.\s*/, '').replace(/^[-*]\s*/, '').replace(/^"/, '').replace(/"$/, '').trim())
+          .filter((line: string) => line.length > 10)
+          .slice(0, 5);
 
-      // Ensure we have exactly 5 tips
-      while (selectedTips.length < 5) {
-        const fallbackTips = [
-          "Always maintain a safe following distance appropriate for current conditions.",
-          "Check your mirrors regularly and signal your intentions clearly to other drivers.",
-          "Keep your vehicle well-maintained with proper tire pressure and working lights.",
-          "Stay focused on driving and avoid distractions like mobile phones.",
-          "Adjust your driving style to match current road and weather conditions."
+        // If we still don't have 5 tips, add contextual ones
+        const contextualTips = [
+          `In ${data.weatherConditions} conditions, reduce speed and increase following distance for safety.`,
+          `When traveling on ${data.majorStreets}, use headlights and check mirrors frequently.`,
+          `With ${data.constructionUpdates}, plan alternative routes and allow extra travel time.`,
+          "Watch for pedestrians and cyclists in busy Altrincham town center areas.",
+          "Maintain proper lane discipline and stay alert for changing road conditions."
         ];
-        
-        for (const tip of fallbackTips) {
-          if (!selectedTips.includes(tip) && selectedTips.length < 5) {
-            selectedTips.push(tip);
+
+        while (tips.length < 5) {
+          const contextualTip = contextualTips[tips.length % contextualTips.length];
+          if (!tips.includes(contextualTip)) {
+            tips.push(contextualTip);
           }
         }
       }
 
-      return selectedTips.slice(0, 5);
+      return tips.slice(0, 5);
     } catch (error) {
-      console.error('Tip Generation Error:', error);
+      console.error('AI Generation Error:', error);
       
-      // Ultimate fallback
+      // Enhanced fallback tips based on conditions
       return [
         `In ${data.weatherConditions} conditions, reduce speed and increase following distance for safety.`,
-        `When traveling on ${data.majorStreets}, use headlights and check mirrors frequently.`,
+        `When traveling on ${data.majorStreets}, use headlights and ensure windshield wipers are in good condition.`,
         `With ${data.constructionUpdates}, plan alternative routes and allow extra time for delays.`,
         "Watch for pedestrians and cyclists in busy Altrincham town center areas.",
-        "Maintain proper lane discipline and stay alert for changing road conditions."
+        "Maintain proper lane discipline on A56 and check mirrors frequently."
       ];
     }
   };
@@ -223,7 +186,7 @@ export function DrivingTipsForm() {
             </div>
             <Button type="submit" disabled={pending} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 button-3d">
               {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
-              {pending ? 'Generating...' : 'Generate Safe Driving Tips'}
+              {pending ? 'Generating AI Tips...' : 'Generate AI Driving Tips'}
             </Button>
             {state.message && state.message !== 'success' && (
               <div className="pt-2 text-sm font-medium text-destructive flex items-center">
@@ -253,8 +216,8 @@ export function DrivingTipsForm() {
           ) : (
             <div className="flex flex-1 flex-col items-center justify-center text-center text-muted-foreground m-auto">
               <Sparkles className="h-12 w-12 mb-4" />
-              <p className="font-semibold">Your tips will appear here</p>
-              <p className="text-sm">Fill out the form to get started.</p>
+              <p className="font-semibold">Your AI tips will appear here</p>
+              <p className="text-sm">Fill out the form to get AI-powered driving advice.</p>
             </div>
           )}
         </CardContent>
@@ -262,5 +225,3 @@ export function DrivingTipsForm() {
     </div>
   );
 }
-
-    
