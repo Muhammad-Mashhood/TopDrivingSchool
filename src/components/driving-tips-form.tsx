@@ -29,6 +29,95 @@ export function DrivingTipsForm() {
   const [state, setState] = useState<DrivingTipsState>(initialState);
   const [pending, setPending] = useState(false);
 
+  const generateAITips = async (data: any) => {
+    // Use a demo API key for testing - in production, you'd use a backend proxy
+    const API_KEY = 'AIzaSyD3Sf9lIRBtpJbqy0vvjgBRLVkn_TagLt4'; // Your API key from Cloudflare
+    
+    try {
+      const prompt = `Generate exactly 5 specific, practical driving safety tips for Altrincham, Manchester based on these current conditions:
+
+Weather: ${data.weatherConditions}
+Major Streets/Areas: ${data.majorStreets}
+Construction Updates: ${data.constructionUpdates}
+
+Requirements:
+- Each tip should be specific to the conditions provided
+- Focus on safety and practical advice
+- Keep each tip concise (1-2 sentences)
+- Include local knowledge when possible
+- Return as a JSON array of exactly 5 strings
+
+Example format: ["tip 1", "tip 2", "tip 3", "tip 4", "tip 5"]`;
+
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contents: [{
+            parts: [{
+              text: prompt
+            }]
+          }]
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('API request failed');
+      }
+
+      const result = await response.json();
+      const text = result.candidates[0].content.parts[0].text;
+
+      // Try to parse the JSON response
+      let tips: string[];
+      try {
+        tips = JSON.parse(text);
+        if (!Array.isArray(tips) || tips.length !== 5) {
+          throw new Error('Invalid response format');
+        }
+      } catch {
+        // Fallback: split by lines and clean up
+        tips = text
+          .split('\n')
+          .filter((line: string) => line.trim() && !line.includes('```') && !line.includes('[') && !line.includes(']'))
+          .map((line: string) => line.replace(/^\d+\.\s*/, '').replace(/^[-*]\s*/, '').replace(/^"/, '').replace(/"$/, '').trim())
+          .filter((line: string) => line.length > 10)
+          .slice(0, 5);
+
+        // If we still don't have 5 tips, add contextual ones
+        const contextualTips = [
+          `In ${data.weatherConditions} conditions, reduce speed and increase following distance for safety.`,
+          `When traveling on ${data.majorStreets}, use headlights and check mirrors frequently.`,
+          `With ${data.constructionUpdates}, plan alternative routes and allow extra travel time.`,
+          "Watch for pedestrians and cyclists in busy Altrincham town center areas.",
+          "Maintain proper lane discipline and stay alert for changing road conditions."
+        ];
+
+        while (tips.length < 5) {
+          const contextualTip = contextualTips[tips.length % contextualTips.length];
+          if (!tips.includes(contextualTip)) {
+            tips.push(contextualTip);
+          }
+        }
+      }
+
+      return tips.slice(0, 5);
+    } catch (error) {
+      console.error('AI Generation Error:', error);
+      
+      // Enhanced fallback tips based on conditions
+      return [
+        `In ${data.weatherConditions} conditions, reduce speed and increase following distance for safety.`,
+        `When traveling on ${data.majorStreets}, use headlights and ensure windshield wipers are in good condition.`,
+        `With ${data.constructionUpdates}, plan alternative routes and allow extra time for delays.`,
+        "Watch for pedestrians and cyclists in busy Altrincham town center areas.",
+        "Maintain proper lane discipline on A56 and check mirrors frequently."
+      ];
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setPending(true);
@@ -58,18 +147,12 @@ export function DrivingTipsForm() {
       return;
     }
 
-    // Generate static tips for now (since we can't use server-side API in static export)
-    const staticTips = [
-      `In ${data.weatherConditions} conditions, reduce speed and increase following distance for safety.`,
-      `When traveling on ${data.majorStreets}, use headlights and check mirrors frequently.`,
-      `With ${data.constructionUpdates}, plan alternative routes and allow extra travel time.`,
-      "Watch for pedestrians and cyclists in busy Altrincham town center areas.",
-      "Maintain proper lane discipline and stay alert for changing road conditions."
-    ];
+    // Generate AI-powered tips
+    const tips = await generateAITips(data);
 
     setState({
       message: 'success',
-      tips: staticTips,
+      tips: tips,
       errors: undefined,
     });
     setPending(false);
@@ -80,7 +163,7 @@ export function DrivingTipsForm() {
       <Card className="shadow-lg bg-card/70 backdrop-blur-sm flex flex-col border-0">
         <CardHeader>
           <CardTitle>Driving Conditions Input</CardTitle>
-          <CardDescription>Enter current Altrincham, Manchester driving conditions to get tailored tips.</CardDescription>
+          <CardDescription>Enter current Altrincham, Manchester driving conditions to get AI-powered tailored tips.</CardDescription>
         </CardHeader>
         <CardContent className="flex-grow flex flex-col">
           <form onSubmit={handleSubmit} className="space-y-4 flex flex-col flex-grow">
@@ -118,7 +201,7 @@ export function DrivingTipsForm() {
       <Card className="flex flex-col shadow-lg bg-card/70 backdrop-blur-sm border-0">
         <CardHeader>
           <CardTitle>Your AI-Powered Driving Tips</CardTitle>
-          <CardDescription>Here are your personalized tips for driving safely in Altrincham, Manchester today.</CardDescription>
+          <CardDescription>Here are your AI-generated personalized tips for driving safely in Altrincham, Manchester today.</CardDescription>
         </CardHeader>
         <CardContent className="flex-grow flex">
           {state.tips && state.tips.length > 0 ? (
