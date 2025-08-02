@@ -2,7 +2,9 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
-  // Configuration for Cloudflare Pages
+  output: 'export',
+  trailingSlash: true,
+  // Configuration for static export
   experimental: {
     serverComponentsExternalPackages: ['@genkit-ai/googleai'],
   },
