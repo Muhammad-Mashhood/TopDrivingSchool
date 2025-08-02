@@ -1,0 +1,17 @@
+# Cloudflare Pages ignore file
+# Exclude cache and large files to stay under 25MB limit
+
+# Next.js cache
+.next/cache/
+.next/cache/**/*
+.next/static/chunks/webpack/
+
+# Build cache
+node_modules/
+*.log
+*.tmp
+
+# Source files (not needed in production)
+src/
+docs/
+*.md

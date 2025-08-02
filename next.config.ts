@@ -3,6 +3,22 @@ import type {NextConfig} from 'next';
 const nextConfig: NextConfig = {
   /* config options here */
   // Remove output: 'export' to allow API routes and Server Actions
+  
+  // Optimize for Cloudflare Pages
+  experimental: {
+    // Reduce bundle size
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+  },
+  
+  // Webpack optimization for file size
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Disable caching in production to reduce file sizes
+      config.cache = false;
+    }
+    return config;
+  },
+  
   typescript: {
     ignoreBuildErrors: true,
   },

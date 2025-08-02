@@ -17,6 +17,10 @@
 /.next/
 /out/
 
+# Cache files (prevent Cloudflare file size issues)
+/.next/cache/
+/.next/cache/**/*
+
 # production
 /build
 
