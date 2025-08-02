@@ -5,6 +5,11 @@ import { Toaster } from "@/components/ui/toaster"
 export const metadata: Metadata = {
   title: 'TopDrivingSchool - Learn to Drive in Manchester',
   description: 'TopDrivingSchool offers expert driving lessons and AI-powered tips to help you pass your test with confidence.',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

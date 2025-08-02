@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#1e40af" rx="4"/>
+  
+  <!-- Car main body -->
+  <path d="M6 19h2l2-4h12l2 4h2c1 0 1.5 0.5 1.5 1.5v3c0 1-0.5 1.5-1.5 1.5h-1v1.5c0 0.8-0.7 1.5-1.5 1.5h-1c-0.8 0-1.5-0.7-1.5-1.5V25H11v1.5c0 0.8-0.7 1.5-1.5 1.5h-1c-0.8 0-1.5-0.7-1.5-1.5V25H6c-1 0-1.5-0.5-1.5-1.5v-3c0-1 0.5-1.5 1.5-1.5z" fill="#ffffff"/>
+  
+  <!-- Car roof -->
+  <path d="M8 15l2-4h12l2 4v4H8V15z" fill="#e5e7eb"/>
+  
+  <!-- Windows -->
+  <path d="M10 15l1.5-3h9l1.5 3v2H10v-2z" fill="#3b82f6"/>
+  
+  <!-- Wheels -->
+  <circle cx="11" cy="26" r="2.5" fill="#1f2937"/>
+  <circle cx="21" cy="26" r="2.5" fill="#1f2937"/>
+  <circle cx="11" cy="26" r="1.5" fill="#6b7280"/>
+  <circle cx="21" cy="26" r="1.5" fill="#6b7280"/>
+  
+  <!-- Headlights -->
+  <circle cx="25" cy="20" r="1" fill="#fbbf24"/>
+  <circle cx="25" cy="22" r="1" fill="#fbbf24"/>
+  
+  <!-- Front grille -->
+  <rect x="24" y="19" width="1" height="4" fill="#374151"/>
+</svg>
