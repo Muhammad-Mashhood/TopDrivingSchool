@@ -2,17 +2,15 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
-  // Remove output: 'export' to allow API routes and Server Actions
+  // Enable static export for better Cloudflare Pages compatibility
+  output: 'export',
+  trailingSlash: true,
   
   // Optimize for Cloudflare Pages - force rebuild
   experimental: {
     // Reduce bundle size
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
-  
-  // Essential for Cloudflare Pages
-  trailingSlash: false,
-  skipTrailingSlashRedirect: true,
   
   // Webpack optimization for file size
   webpack: (config, { isServer }) => {
@@ -38,6 +36,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: true, // Required for static export
     remotePatterns: [
       {
         protocol: 'https',
