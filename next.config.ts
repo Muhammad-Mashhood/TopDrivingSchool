@@ -5,9 +5,7 @@ const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: true,
   // Configuration for static export
-  experimental: {
-    serverComponentsExternalPackages: ['@genkit-ai/googleai'],
-  },
+  serverExternalPackages: ['@genkit-ai/googleai'],
   typescript: {
     ignoreBuildErrors: true,
   },
