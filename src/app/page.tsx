@@ -414,25 +414,33 @@ const ContactSection = ({ preSelectedPlan }: { preSelectedPlan?: string }) => {
     };
 
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      // Create mailto URL directly (no API needed for static site)
+      const subject = encodeURIComponent(`Driving Lesson Inquiry - ${data.plan}`);
+      const body = encodeURIComponent(`Hello Top Driving School,
 
-      const result = await response.json();
+My name is ${data.name} and I'm interested in your driving lessons.
 
-      if (response.ok && result.success) {
-        // Open user's email client with pre-filled data
-        window.location.href = result.mailtoUrl;
-        setSubmitStatus('success');
-        console.log('📧 Opening email client with pre-filled data');
-      } else {
-        setSubmitStatus('error');
-        console.error('❌ Form processing failed:', result.message);
-      }
+Contact Details:
+- Name: ${data.name}
+- Email: ${data.email}
+- Phone: ${data.phone}
+- Selected Plan: ${data.plan}
+
+Message:
+${data.message}
+
+I look forward to hearing from you!
+
+Best regards,
+${data.name}`);
+      
+      const mailtoUrl = `mailto:aminmakki@hotmail.com?subject=${subject}&body=${body}`;
+      
+      // Open user's email client with pre-filled data
+      window.location.href = mailtoUrl;
+      setSubmitStatus('success');
+      console.log('📧 Opening email client with pre-filled data');
+      
     } catch (error) {
       console.error('❌ Submission error:', error);
       setSubmitStatus('error');
@@ -509,8 +517,8 @@ const ContactSection = ({ preSelectedPlan }: { preSelectedPlan?: string }) => {
                   }`}
                 >
                   {isSubmitting ? 'Processing...' : 
-                   submitStatus === 'success' ? 'Opening Email Client... ✓' :
-                   submitStatus === 'error' ? 'Failed to Process ✗' :
+                   submitStatus === 'success' ? 'Email Client Opened! ✓' :
+                   submitStatus === 'error' ? 'Please Try Again ✗' :
                    'Send Message'}
                 </Button>
               </form>
