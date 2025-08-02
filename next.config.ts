@@ -2,7 +2,10 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
-  // Remove output: 'export' to allow Server Actions
+  // Configuration for Cloudflare Pages
+  experimental: {
+    serverComponentsExternalPackages: ['@genkit-ai/googleai'],
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
