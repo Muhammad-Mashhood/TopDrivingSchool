@@ -140,15 +140,12 @@ const HeroSection = () => (
       </div>
        <div className="relative flex items-center justify-center mt-8 md:mt-0">
         <Image 
-          src="https://res.cloudinary.com/duyxw8aet/image/upload/v1753991686/craiyon_005443_image_w7bg5n.png"
+          src="/images/car-hero.png"
           alt="Modern car for driving lessons"
           width={600}
           height={400}
           priority
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
           className="object-contain drop-shadow-lg w-full max-w-sm sm:max-w-md md:max-w-full"
-          data-ai-hint="modern car"
         />
       </div>
     </div>
@@ -488,7 +485,7 @@ ${data.name}`);
                   <Label htmlFor="plan" className="text-sm md:text-base">Interested Plan</Label>
                   {isClient ? (
                     <Select name="plan" value={selectedPlan} onValueChange={setSelectedPlan}>
-                      <SelectTrigger className="text-sm md:text-base bg-transparent border-border focus:bg-transparent">
+                      <SelectTrigger className="text-sm md:text-base bg-transparent border-0 focus:bg-transparent focus:ring-0 focus:ring-offset-0">
                         <SelectValue placeholder="Select a plan..." />
                       </SelectTrigger>
                       <SelectContent>
@@ -500,7 +497,7 @@ ${data.name}`);
                       </SelectContent>
                     </Select>
                   ) : (
-                    <div className="text-sm md:text-base bg-transparent border border-border rounded-md px-3 py-2 text-muted-foreground">
+                    <div className="text-sm md:text-base bg-transparent border-0 rounded-md px-3 py-2 text-muted-foreground">
                       Select a plan...
                     </div>
                   )}
