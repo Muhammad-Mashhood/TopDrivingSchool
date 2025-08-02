@@ -30,8 +30,12 @@ export function DrivingTipsForm() {
   const [pending, setPending] = useState(false);
 
   const generateAITips = async (data: any) => {
-    // Use the Google Gemini API for real AI-generated tips
-    const API_KEY = 'AIzaSyD3Sf9lIRBtpJbqy0vvjgBRLVkn_TagLt4'; // Your API key from Cloudflare
+    // Use environment variable for API key security
+    const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+    
+    if (!API_KEY) {
+      throw new Error('Google API key not configured');
+    }
     
     try {
       const prompt = `Generate exactly 5 specific, practical driving safety tips for Altrincham, Manchester based on these current conditions:
