@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   // Remove output: 'export' to allow API routes and Server Actions
   
-  // Optimize for Cloudflare Pages
+  // Optimize for Cloudflare Pages - force rebuild
   experimental: {
     // Reduce bundle size
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
